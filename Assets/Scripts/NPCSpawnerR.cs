@@ -13,7 +13,12 @@ public class NPCSpawnerR : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        tempMan = new GameObject();
+		float zDist = Camera.main.transform.position.z - transform.position.z;
+
+		Vector3 worldPos = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, zDist));
+		transform.position = new Vector3(worldPos.x, transform.position.y, transform.position.z);
+
+		tempMan = new GameObject();
         tempMan = (GameObject)Instantiate(testMan, transform.position, transform.rotation);
 
         tempMan.GetComponent<MoveGuy>().Direction = 0;

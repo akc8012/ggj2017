@@ -34,7 +34,7 @@ public class ItemManager : MonoBehaviour
 	void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.P))
-			SpawnItem("BalloonItem", Vector3.zero);
+			SpawnItem("BalloonItem", new Vector3(-1.16f, 0.42f, 0));
 	}
 
 	public void SpawnItem(string name, Vector3 startPos)
@@ -50,7 +50,8 @@ public class ItemManager : MonoBehaviour
 		}
 
 		GameObject obj = dragItems[ndx];
-		Instantiate(obj, new Vector3(-1.16f, 0.42f, 0), Quaternion.identity);
+		// convert pos from screen-space to world space before we continue
+		Instantiate(obj, startPos, Quaternion.identity);
 	}
 
 	void SceneLoaded()

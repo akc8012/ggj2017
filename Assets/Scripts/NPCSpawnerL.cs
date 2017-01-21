@@ -13,10 +13,10 @@ public class NPCSpawnerL : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        Camera cam = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
-        Vector3 p = cam.ScreenToWorldPoint(new Vector3(10, 0, 0));
-        Debug.Log(p);
-        transform.position = new Vector3(p.x, transform.position.y, transform.position.z);
+		float zDist = Camera.main.transform.position.z - transform.position.z;
+
+		Vector3 worldPos = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0, zDist));
+		transform.position = new Vector3(worldPos.x, transform.position.y, transform.position.z);
 
         tempMan = new GameObject();
         tempMan = (GameObject)Instantiate(testMan, transform.position, transform.rotation);
@@ -28,7 +28,12 @@ public class NPCSpawnerL : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        spawnTimeL -= Time.deltaTime;
+		//Vector3 worldPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10));
+		//transform.position = new Vector3(worldPos.x, transform.position.y, transform.position.z);
+
+
+
+		spawnTimeL -= Time.deltaTime;
 
         if (spawnTimeL < 0)
         {
