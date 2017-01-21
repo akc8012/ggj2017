@@ -5,23 +5,19 @@ using System.Collections;
 
 public class NPCskeleton : MonoBehaviour
 {
-    //int cScore = 0;       // canada score (temp, this value might be somewhere else eventually)
-    //int cValue;      // Canadians canada score value
-    //int cLoss;      // Loss of points when canadians leave
+    int cLoss;      // Loss of points when canadians leave
 
     int happiness; // canadians happiness level - will instantiate appropriate head!
 
     //Color color;  // color of Body randomized
 
-   // int hMod;     // canadian's happiness modifier (difficulty modifier)
+    //int hMod;     // canadian's happiness modifier (difficulty modifier)
 
 
-
-	// Use this for initialization
+    // Use this for initialization
 	void Start ()
     {
-        //cLoss = 5;
-        //cValue = 10;
+        cLoss = 2;
 
         happiness = (Random.Range(0, 5));
 	}
@@ -34,9 +30,15 @@ public class NPCskeleton : MonoBehaviour
             Destroy(gameObject);
             ScoreManager.instance.AddScore(5);
         }
+
+        if (InputGuy.instance.IsPressedDuringFrame && InputGuy.instance.IsHoveringOver(gameObject))
+        {
+
+            OnPeoplePress();
+        }
     }
 
-    void OnMouseDown()
+    void OnPeoplePress()
     {
         if (Input.GetKey("mouse 0"))
         {
