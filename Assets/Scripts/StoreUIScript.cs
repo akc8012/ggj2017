@@ -52,6 +52,8 @@ public class StoreUIScript : MonoBehaviour
 
 
         upgradeButton.onClick.AddListener(SwitchToUpgrades);
+        itemButton.onClick.AddListener(SwitchToUpgrades);
+        nextLevelButton.onClick.AddListener(SwitchToUpgrades);
     }
 
     // Update is called once per frame
