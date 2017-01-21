@@ -9,13 +9,13 @@ public class NPCskeleton : MonoBehaviour
 
     int cScore = 0;       // canada score (temp, this value might be somewhere else eventually)
     int cValue;      // Canadians canada score value
-    int cLoss;      // Loss of points when canadians leave
+    //int cLoss;      // Loss of points when canadians leave
 
     int happiness; // canadians happiness level - will instantiate appropriate head!
 
-    Color color;  // color of Body randomized
+    //Color color;  // color of Body randomized
 
-    int hMod;     // canadian's happiness modifier (difficulty modifier)
+   // int hMod;     // canadian's happiness modifier (difficulty modifier)
 
 
 
@@ -35,8 +35,9 @@ public class NPCskeleton : MonoBehaviour
 
         if (happiness == 5)
         {
-            cScore += cValue;
             Destroy(gameObject);
+            cScore = cScore + cValue;
+            Debug.Log(cScore);
         }
     }
 
@@ -45,7 +46,7 @@ public class NPCskeleton : MonoBehaviour
         if (Input.GetKey("mouse 0"))
         {
             happiness += 1;
-            Debug.Log("happiness = " + happiness + "    Score = " + cScore);
+            Debug.Log("happiness = " + happiness);
         }
     }
 }
