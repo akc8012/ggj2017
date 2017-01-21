@@ -9,7 +9,7 @@ public class NPCSpawnerL : MonoBehaviour
 
     public float spawnTimeL = 5.0f; // spawn timer
 
-    float despawnTimer = 10.0f;   // despawn timer
+    //float despawnTimer = 10.0f;   // despawn timer
 
     // Use this for initialization
     void Start()

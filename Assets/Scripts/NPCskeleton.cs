@@ -5,7 +5,7 @@ using System.Collections;
 
 public class NPCskeleton : MonoBehaviour
 {
-    int cLoss;      // Loss of points when canadians leave
+    //int cLoss;      // Loss of points when canadians leave
 
     int happiness; // canadians happiness level - will instantiate appropriate head!
 
@@ -17,7 +17,7 @@ public class NPCskeleton : MonoBehaviour
     // Use this for initialization
 	void Start ()
     {
-        cLoss = 2;
+       // cLoss = 2;
 
         happiness = (Random.Range(0, 5));
 	}
