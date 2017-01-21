@@ -9,9 +9,6 @@ using System.Collections;
 
 public class PlaidMan_ClickAction : MonoBehaviour {
 
-	PlayerDataManager 
-		dataMan;
-
 	public GameObject[] 
 		children;
 
@@ -28,7 +25,6 @@ public class PlaidMan_ClickAction : MonoBehaviour {
 		audioSource;
 
 	void Start () {
-		dataMan = PlayerDataManager.Instance;
 
 		// Set the Player attributes to the right values
 		transform.SetParent(Camera.main.transform);
