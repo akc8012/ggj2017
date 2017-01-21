@@ -6,6 +6,7 @@ using System.Collections;
 public class NPCskeleton : MonoBehaviour
 {
     int happiness; // canadians happiness level - will instantiate appropriate head!
+    public int hapiness { set { happiness = value; } }
 
     MoveGuy moveguy;
 
@@ -19,7 +20,7 @@ public class NPCskeleton : MonoBehaviour
     void Start ()
     {
         happiness = (Random.Range(0, 5));
-
+    
         moveguy = GetComponent<MoveGuy>();
 	}
 	
