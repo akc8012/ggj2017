@@ -5,11 +5,8 @@ using System.Collections;
 
 public class NPCskeleton : MonoBehaviour
 {
-    public float speedX; // canadian horizontal speed    
-    public float speedY; // canadian vertical speed
-
-    int cScore = 0;       // canada score (temp, this value might be somewhere else eventually)
-    int cValue;      // Canadians canada score value
+    //int cScore = 0;       // canada score (temp, this value might be somewhere else eventually)
+    //int cValue;      // Canadians canada score value
     //int cLoss;      // Loss of points when canadians leave
 
     int happiness; // canadians happiness level - will instantiate appropriate head!
@@ -24,7 +21,7 @@ public class NPCskeleton : MonoBehaviour
 	void Start ()
     {
         //cLoss = 5;
-        cValue = 10;
+        //cValue = 10;
 
         happiness = (Random.Range(0, 5));
 	}
@@ -32,13 +29,10 @@ public class NPCskeleton : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        transform.Translate(speedX, speedY, 0);
-
         if (happiness == 5)
         {
             Destroy(gameObject);
-            cScore = cScore + cValue;
-            Debug.Log(cScore);
+            ScoreManager.instance.AddScore(5);
         }
     }
 

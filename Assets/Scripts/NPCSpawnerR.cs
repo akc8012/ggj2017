@@ -7,32 +7,28 @@ public class NPCSpawnerR : MonoBehaviour
 {
     public GameObject testMan;
 
-    public float spawnTime = 5.0f;
-
-    //float manSpeed;  // getting speed variable from skeleton script
-    public float speed = -0.1f;
+    public float spawnTimeR = 5.0f;
 
     // Use this for initialization
     void Start()
     {
-        Instantiate(testMan, transform.position, transform.rotation);
-
-        testMan.GetComponent<NPCskeleton>().speedX = speed;
-
-        //manSpeed = testMan.GetComponent<NPCskeleton>().speedX;
-
-
+        GameObject tempMan = new GameObject();
+        tempMan = (GameObject)Instantiate(testMan, transform.position, transform.rotation);
+        tempMan.GetComponent<MoveGuy>().speedX = -0.1f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        spawnTime -= Time.deltaTime;
+        spawnTimeR -= Time.deltaTime;
 
-        if (spawnTime < 0)
+        if (spawnTimeR < 0)
         {
-            Instantiate(testMan, transform.position, transform.rotation);
-            spawnTime = 5.0f;
+            GameObject tempMan = new GameObject();
+            tempMan = (GameObject)Instantiate(testMan, transform.position, transform.rotation);
+            tempMan.GetComponent<MoveGuy>().speedX = -0.1f;
+
+            spawnTimeR = 5.0f;
         }
     }
 }
