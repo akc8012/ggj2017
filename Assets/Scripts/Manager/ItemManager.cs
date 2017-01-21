@@ -37,7 +37,7 @@ public class ItemManager : MonoBehaviour
 			SpawnItem("BalloonItem", new Vector3(-1.16f, 0.42f, 0));
 	}
 
-	public void SpawnItem(string name, Vector3 startPos)
+	public void SpawnItem(string name)
 	{
 		int ndx = -1;
 		for (int i = 0; i < itemNames.Length; i++)
@@ -51,7 +51,7 @@ public class ItemManager : MonoBehaviour
 
 		GameObject obj = dragItems[ndx];
 		// convert pos from screen-space to world space before we continue
-		Instantiate(obj, startPos, Quaternion.identity);
+		Instantiate(obj, InputGuy.instance.WorldPosition, Quaternion.identity);
 	}
 
 	void SceneLoaded()
