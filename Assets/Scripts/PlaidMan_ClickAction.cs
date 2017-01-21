@@ -20,7 +20,7 @@ public class PlaidMan_ClickAction : MonoBehaviour {
 
 	int 
 		counter = 0,
-		clickDelay = 60;
+		clickDelay = 0;
 
 	bool 
 		startCounting = false;
@@ -34,6 +34,9 @@ public class PlaidMan_ClickAction : MonoBehaviour {
 	}
 
 	void Update () {
+
+		clickDelay = dataMan.ClickDelay;
+
 		if (startCounting)
 			counter++;
 		if (counter > clickDelay) {

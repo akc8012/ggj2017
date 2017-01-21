@@ -47,6 +47,9 @@ public class PlayerDataManager
 	bool canClick = false;
 	public bool CanClick{get{return canClick; }set{ canClick = value;}}
 
+	int clickDelay = 60;
+	public int ClickDelay{get{ return clickDelay;}set{ clickDelay = value;}}
+
 	#endregion
 
 	#region BEHAVIORS
@@ -58,6 +61,14 @@ public class PlayerDataManager
 		if (playerPowerLevel < 5) {
 			playerPowerLevel += 1;
 		}
+	}
+
+	public void PoutineActivate(){
+		clickDelay = 30;
+	}
+
+	public void PoutineDeactivate(){
+		clickDelay = 60;
 	}
 
 	#endregion
