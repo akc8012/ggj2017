@@ -46,4 +46,13 @@ public class InputGuy : MonoBehaviour
 	// WORLD SPACE coordinates
 	public Vector3 WorldPosition
 	{ get { return Camera.main.ScreenToWorldPoint(new Vector3(Position.x, Position.y, 10)); } }
+
+	public bool IsPressed
+	{
+		get
+		{
+			if (OnWindows) return Input.GetMouseButton(0);
+			else return Input.touchCount != 0;
+		}
+	}
 }
