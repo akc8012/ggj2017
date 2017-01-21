@@ -26,7 +26,7 @@ public class NPCskeleton : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        if (happiness == 5)
+        if (happiness >= 5)
         {
             moveguy.Stop();
             Destroy(gameObject, 0.7f);
@@ -44,8 +44,13 @@ public class NPCskeleton : MonoBehaviour
     {
         if (Input.GetKey("mouse 0"))
         {
-            happiness += 1;
+            happiness += PlayerDataManager.Instance.ClickPower + 1;
             Debug.Log("happiness = " + happiness);
         }
+    }
+
+    public void MakeHappy()
+    {
+        happiness = 7;
     }
 }
