@@ -22,7 +22,7 @@ public class NPCskeleton : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-        cLoss = 5;
+        //cLoss = 5;
         cValue = 10;
 
         happiness = (Random.Range(0, 5));
