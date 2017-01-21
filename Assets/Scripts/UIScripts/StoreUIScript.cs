@@ -28,6 +28,9 @@ public class StoreUIScript : MonoBehaviour
     Text currencyText;
     #endregion
 
+    int upgradeIndex;
+    int itemIndex;
+
 
     // Use this for initialization
     void Start()
@@ -57,6 +60,9 @@ public class StoreUIScript : MonoBehaviour
         //----------------------------------------------------------------------//
 
 
+        upgradeIndex = upgradeGroup.transform.GetSiblingIndex();
+        itemIndex = itemGroup.transform.GetSiblingIndex();
+
         upgradeButton.onClick.AddListener(SwitchToUpgrades);
         itemButton.onClick.AddListener(SwitchToItems);
         nextLevelButton.onClick.AddListener(GoToNextLevel);
@@ -74,6 +80,8 @@ public class StoreUIScript : MonoBehaviour
             upgradeGroup.alpha = 1;
             upgradeGroup.interactable = true;
             upgradeGroup.blocksRaycasts = true;
+
+            itemGroup.alpha = 1;
         }
 
         //Update the CanadaCredit
@@ -83,11 +91,10 @@ public class StoreUIScript : MonoBehaviour
     //Switches the Store Panel to Upgrades section
     void SwitchToUpgrades()
     {
-        upgradeGroup.alpha = 1;
+        upgradeGroup.transform.SetSiblingIndex(itemGroup.transform.GetSiblingIndex());
         upgradeGroup.interactable = true;
         upgradeGroup.blocksRaycasts = true;
 
-        itemGroup.alpha = 0;
         itemGroup.interactable = false;
         itemGroup.blocksRaycasts = false;
     }
@@ -95,11 +102,10 @@ public class StoreUIScript : MonoBehaviour
     //Switches the store panel to items section
     void SwitchToItems()
     {
-        upgradeGroup.alpha = 0;
         upgradeGroup.interactable = false;
         upgradeGroup.blocksRaycasts = false;
 
-        itemGroup.alpha = 1;
+        itemGroup.transform.SetSiblingIndex(upgradeGroup.transform.GetSiblingIndex());
         itemGroup.interactable = true;
         itemGroup.blocksRaycasts = true;
     }
