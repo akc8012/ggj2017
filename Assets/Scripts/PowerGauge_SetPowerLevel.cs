@@ -14,6 +14,8 @@ public class PowerGauge_SetPowerLevel : MonoBehaviour
 
 	public GameObject[] powerGaugeSegments;
 
+	public GameObject numberOfGaugesText;
+
 	void Start () 
 	{
 		dataMan = PlayerDataManager.Instance;
@@ -22,6 +24,7 @@ public class PowerGauge_SetPowerLevel : MonoBehaviour
 	void Update () 
 	{
 		int currentPowerLevel = dataMan.PlayerPowerLevel;
+		numberOfGaugesText.GetComponent<Text> ().text = "x " + dataMan.NumberOfPowerGauges;
 
 		switch (currentPowerLevel) {
 		case 1:
