@@ -52,7 +52,7 @@ public class PlaidMan_ClickAction : MonoBehaviour {
 			audioSource[0].volume = 0.1f;
 			audioSource[0].PlayOneShot(audioClips[0]);
 		}
-		if (Input.GetMouseButtonDown (0) && !dataMan.CanClick) {
+		if ((Input.GetMouseButtonDown (0) || InputGuy.instance.IsPressedDuringFrame) && !dataMan.CanClick) {
 			dataMan.CanClick = true;
 			startCounting = true;
 			GetComponent<Animator> ().SetTrigger("ACTIVE");
