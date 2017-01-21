@@ -50,4 +50,10 @@ public class MoveGuy : MonoBehaviour
 
         transform.Translate(speedX, speedY, 0);
     }
+
+    public void Stop()
+    {
+        speedX = 0.0f;
+        speedY = 0.0f;
+    }
 }

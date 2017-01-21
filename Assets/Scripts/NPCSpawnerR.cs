@@ -15,6 +15,7 @@ public class NPCSpawnerR : MonoBehaviour
     {
         tempMan = new GameObject();
         tempMan = (GameObject)Instantiate(testMan, transform.position, transform.rotation);
+
         tempMan.GetComponent<MoveGuy>().Direction = 0;
         tempMan.GetComponent<MoveGuy>().speedX = -0.1f;
     }
