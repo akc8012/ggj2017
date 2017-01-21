@@ -4,19 +4,23 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
-public class UIScript : MonoBehaviour
+public class StoreUIScript : MonoBehaviour
 {
-    public CanvasGroup storeGroup;
-    public CanvasGroup upgradeGroup;
-    public CanvasGroup itemGroup;
+    #region Declaring Canvas Groups
+    CanvasGroup storeGroup;
+    CanvasGroup upgradeGroup;
+    CanvasGroup itemGroup;
+    #endregion
 
 
     // Use this for initialization
     void Start()
     {
+        #region Setting Canvas Groups
         storeGroup = GameObject.Find("StorePanel").gameObject.GetComponent<CanvasGroup>();
         upgradeGroup = GameObject.Find("UpgradePanel").gameObject.GetComponent<CanvasGroup>();
         itemGroup = GameObject.Find("ItemPanel").gameObject.GetComponent<CanvasGroup>();
+        #endregion
 
     }
 
