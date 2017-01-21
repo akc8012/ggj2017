@@ -7,9 +7,21 @@ using UnityEngine.UI;
 public class StoreUIScript : MonoBehaviour
 {
     #region Declaring Canvas Groups
+    [SerializeField]
     CanvasGroup storeGroup;
+    [SerializeField]
     CanvasGroup upgradeGroup;
+    [SerializeField]
     CanvasGroup itemGroup;
+    #endregion
+
+    #region Declaring Buttons
+    [SerializeField]
+    Button upgradeButton;
+    [SerializeField]
+    Button itemButton;
+    [SerializeField]
+    Button nextLevelButton;
     #endregion
 
 
@@ -21,6 +33,22 @@ public class StoreUIScript : MonoBehaviour
         upgradeGroup = GameObject.Find("UpgradePanel").gameObject.GetComponent<CanvasGroup>();
         itemGroup = GameObject.Find("ItemPanel").gameObject.GetComponent<CanvasGroup>();
         #endregion
+
+        upgradeButton = GameObject.Find("UpgradesButton").gameObject.GetComponent<Button>();
+        itemButton = GameObject.Find("ItemsButton").gameObject.GetComponent<Button>();
+        nextLevelButton = GameObject.Find("NextLevelButton").gameObject.GetComponent<Button>();
+
+        //Sets all canvas groups to be invisible and non-active at the beginning
+        //storeGroup.alpha = 0;
+        //storeGroup.interactable = false;
+        //storeGroup.blocksRaycasts = false;
+        //itemGroup.alpha = 0;
+        //itemGroup.interactable = false;
+        //itemGroup.blocksRaycasts = false;
+        //upgradeGroup.alpha = 0;
+        //upgradeGroup.interactable = false;
+        //upgradeGroup.blocksRaycasts = false;
+        //----------------------------------------------------------------------//
 
     }
 
