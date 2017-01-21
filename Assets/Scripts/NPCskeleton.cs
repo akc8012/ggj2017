@@ -5,7 +5,8 @@ using System.Collections;
 
 public class NPCskeleton : MonoBehaviour
 {
-    float speed = -.1f;       // canadian speed    
+    public float speedX; // canadian horizontal speed    
+    public float speedY; // canadian vertical speed
 
     int cScore = 0;       // canada score (temp, this value might be somewhere else eventually)
     int cValue;      // Canadians canada score value
@@ -31,7 +32,7 @@ public class NPCskeleton : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        transform.Translate(speed, 0, 0);
+        transform.Translate(speedX, speedY, 0);
 
         if (happiness == 5)
         {
