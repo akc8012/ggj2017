@@ -19,8 +19,7 @@ public class PlaidMan_ClickAction : MonoBehaviour {
 		audioClips;	// cheering, hardClap, threeClaps
 
 	int 
-		counter = 0,
-		clickDelay = 0;
+		counter = 0;
 
 	bool 
 		startCounting = false;
@@ -30,19 +29,27 @@ public class PlaidMan_ClickAction : MonoBehaviour {
 
 	void Start () {
 		dataMan = PlayerDataManager.Instance;
-		dataMan.CanClick = true;
+
+		// Set the Player attributes to the right values
+		transform.SetParent(Camera.main.transform);
+		transform.position = new Vector3 (0, 0, 0);
+		transform.rotation = Quaternion.Euler(new Vector3 (0, 0, 0));
+		transform.localScale = new Vector3 (1, 1, 1);
+
+		// Start the applause, waving, etc
+		startCounting = true;
+		GetComponent<Animator> ().SetTrigger("ACTIVE");
+		for (int i = 0; i < this.children.Length; i++) {
+			children[i].GetComponent<Animator> ().SetTrigger("ACTIVE");
+		}
 	}
 
 	void Update () {
 
-		clickDelay = dataMan.ClickDelay;
-
 		if (startCounting)
 			counter++;
-		if (counter > clickDelay) {
-			dataMan.CanClick = true;
-			startCounting = false;
-			counter = 0;
+		if (counter > 80) {
+			Destroy (gameObject);
 		}
 		if (counter == 10) {
 			audioSource[1].volume = 0.4f;
@@ -51,14 +58,6 @@ public class PlaidMan_ClickAction : MonoBehaviour {
 		if (counter == 5) {
 			audioSource[0].volume = 0.1f;
 			audioSource[0].PlayOneShot(audioClips[0]);
-		}
-		if ((Input.GetMouseButtonDown (0) || InputGuy.instance.IsPressedDuringFrame) && dataMan.CanClick) {
-			dataMan.CanClick = false;
-			startCounting = true;
-			GetComponent<Animator> ().SetTrigger("ACTIVE");
-			for (int i = 0; i < this.children.Length; i++) {
-				children[i].GetComponent<Animator> ().SetTrigger("ACTIVE");
-			}
 		}
 	}
 }
