@@ -51,4 +51,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f472c170c2bc9db48abb1862de57ca1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DragItem: {fileID: 1000012462464136, guid: 48735f0dd1bc8a1429bd28a8049889aa, type: 2}
+  DragItem: {fileID: 1000012462464136, guid: 2b64107f3f6ddce4092fb87868521396, type: 2}

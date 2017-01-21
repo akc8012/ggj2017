@@ -5,12 +5,18 @@ using System.Collections;
 public class DragItem : MonoBehaviour
 {
 	int spawnedFrame;				// at what game frame did we spawn?
-	const int leniencyFrames = 30;	// how many frames we can go before we let go
+	const int leniencyFrames = 30;  // how many frames we can go before we let go
+	protected string objName;
+	public string ObjName { get { return objName; } }
 
 	void Start()
 	{
 		spawnedFrame = Time.frameCount;
+		objName = "DragItem";
+		Init();
 	}
+
+	protected virtual void Init() { }
 	
 	void Update()
 	{
@@ -20,14 +26,16 @@ public class DragItem : MonoBehaviour
 			transform.position = screenToWorld;
 		}
 		else if (!WithinLeniencyFrames())
-			DestroyThenMakeNew();
+		{
+			PerformDropAction();
+			Destroy(gameObject);
+		}
+
+		PerformContinuousAction();
 	}
 
-	void DestroyThenMakeNew()
-	{
-		ItemManager.instance.StartCoroutine(ItemManager.instance.SpawnAfterTime());
-		Destroy(gameObject);
-	}
+	protected virtual void PerformDropAction() { }
+	protected virtual void PerformContinuousAction() { }
 
 	bool WithinLeniencyFrames() { return Time.frameCount-spawnedFrame < leniencyFrames; }
 }
