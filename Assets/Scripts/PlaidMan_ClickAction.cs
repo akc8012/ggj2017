@@ -26,13 +26,13 @@ public class PlaidMan_ClickAction : MonoBehaviour {
 	void Update () {
 		if (startCounting)
 			counter++;
-		if (counter == 10) {
+		if (counter > 10) {
 			audioSource[1].volume = 0.4f;
 			audioSource[1].PlayOneShot(audioClips[1]);
-		}
-		if (counter > 15) {
 			startCounting = false;
 			counter = 0;
+		}
+		if (counter == 5) {
 			audioSource[0].volume = 0.1f;
 			audioSource[0].PlayOneShot(audioClips[0]);
 		}
