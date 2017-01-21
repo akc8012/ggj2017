@@ -57,7 +57,7 @@ public class PlayerDataManager
 
 	// increase power level
 	public void IncreasePowerLevel(){
-		clickPower += 5;
+		clickPower += 1;
 		if (playerPowerLevel < 5) {
 			playerPowerLevel += 1;
 		}
