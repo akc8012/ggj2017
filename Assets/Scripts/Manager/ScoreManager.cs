@@ -7,7 +7,7 @@ public class ScoreManager : MonoBehaviour
 {
 	public static ScoreManager instance = null;
 
-	int score = 0;		// placeholder
+	int score = 0;
 
 	void Awake()
 	{
@@ -20,9 +20,21 @@ public class ScoreManager : MonoBehaviour
 		SceneManager.sceneLoaded += (scene, loadingMode) => { SceneLoaded(); };
 	}
 
+	void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.Space))
+			AddScore(5);
+	}
+
 	void SceneLoaded()
 	{
 		if (score != 0)
 			score = 0;  // THIS IS TOTALLY PLACEHODLER, dont actually use this
+	}
+
+	public void AddScore(int amount)
+	{
+		score += amount;
+		print("new score is: " + score);
 	}
 }

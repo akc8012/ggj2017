@@ -8,7 +8,7 @@ public class ItemManager : MonoBehaviour
 {
 	public static ItemManager instance = null;
 
-	List<int> items;	// placeholder
+	List<Item> items = new List<Item>();
 
 	void Awake()
 	{
@@ -19,6 +19,11 @@ public class ItemManager : MonoBehaviour
 
 		DontDestroyOnLoad(gameObject);
 		SceneManager.sceneLoaded += (scene, loadingMode) => { SceneLoaded(); };
+	}
+
+	void Start()
+	{
+		items.Clear();
 	}
 
 	void SceneLoaded()
