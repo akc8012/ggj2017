@@ -52,8 +52,8 @@ public class StoreUIScript : MonoBehaviour
 
 
         upgradeButton.onClick.AddListener(SwitchToUpgrades);
-        itemButton.onClick.AddListener(SwitchToUpgrades);
-        nextLevelButton.onClick.AddListener(SwitchToUpgrades);
+        itemButton.onClick.AddListener(SwitchToItems);
+        nextLevelButton.onClick.AddListener(GoToNextLevel);
     }
 
     // Update is called once per frame
@@ -71,8 +71,41 @@ public class StoreUIScript : MonoBehaviour
         }
     }
 
+    //Switches the Store Panel to Upgrades section
     void SwitchToUpgrades()
     {
-        Debug.Log("I have been clicked!");
+        upgradeGroup.alpha = 1;
+        upgradeGroup.interactable = true;
+        upgradeGroup.blocksRaycasts = true;
+
+        itemGroup.alpha = 0;
+        itemGroup.interactable = false;
+        itemGroup.blocksRaycasts = false;
+    }
+
+    //Switches the store panel to items section
+    void SwitchToItems()
+    {
+        upgradeGroup.alpha = 0;
+        upgradeGroup.interactable = false;
+        upgradeGroup.blocksRaycasts = false;
+
+        itemGroup.alpha = 1;
+        itemGroup.interactable = true;
+        itemGroup.blocksRaycasts = true;
+    }
+
+    //Goes to the next level
+    void GoToNextLevel()
+    {
+        storeGroup.alpha = 0;
+        storeGroup.interactable = false;
+        storeGroup.blocksRaycasts = false;
+        itemGroup.alpha = 0;
+        itemGroup.interactable = false;
+        itemGroup.blocksRaycasts = false;
+        upgradeGroup.alpha = 0;
+        upgradeGroup.interactable = false;
+        upgradeGroup.blocksRaycasts = false;
     }
 }
