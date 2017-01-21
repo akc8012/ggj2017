@@ -851,6 +851,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testMan: {fileID: 1000011056612450, guid: 9f7d1a5aac2be0d4583d969a1370630b, type: 2}
+  moose: {fileID: 1000013313405532, guid: 6eb7e09c35be8044db81131f7be7134e, type: 2}
   spawnTimeR: 5
 --- !u!33 &1941465174
 MeshFilter:

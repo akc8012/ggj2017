@@ -8,6 +8,9 @@ public class NPCSpawnerR : MonoBehaviour
     public GameObject testMan;
     GameObject tempMan;
 
+    public GameObject moose;
+    GameObject tempMoose;
+
     public float spawnTimeR = 5.0f;
 
     // Use this for initialization
@@ -39,5 +42,19 @@ public class NPCSpawnerR : MonoBehaviour
             tempMan.GetComponent<MoveGuy>().speedX = -0.1f;
             spawnTimeR = 5.0f;
         }
+
+        if(Input.GetKeyDown("m"))
+        {
+            spawnMoose();
+        }
+    }
+
+    void spawnMoose()
+    {
+        tempMoose = new GameObject();
+        tempMoose = (GameObject)Instantiate(moose, transform.position, transform.rotation);
+
+        tempMoose.GetComponent<MoveGuy>().Direction = 0;
+        tempMoose.GetComponent<MoveGuy>().speedX = -0.05f;
     }
 }

@@ -1,52 +1,42 @@
-﻿// Roger
+﻿//Roger 
 
 using UnityEngine;
 using System.Collections;
 
-public class NPCskeleton : MonoBehaviour
+public class Moose : MonoBehaviour
 {
-    int happiness; // canadians happiness level - will instantiate appropriate head!
-    public int Happiness { get { return happiness; } }
-
-    MoveGuy moveguy;
+    int happiness = 0;
 
     int waveTimer = 0;
 
-    //Color color;  // color of Body randomized
-
-    //int hMod;     // canadian's happiness modifier (difficulty modifier)
-
+    MoveGuy moveguy;
 
     // Use this for initialization
     void Start ()
     {
-        PlayerDataManager.Instance.CanClick = true;
-
-        happiness = (Random.Range(0, 4));
-    
         moveguy = GetComponent<MoveGuy>();
-	}
+    }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        if (happiness > 3)
+        if (happiness > 19)
         {
             moveguy.Stop();
             Destroy(gameObject, 0.7f);
-            ScoreManager.instance.AddScore(5);
+            ScoreManager.instance.AddScore(20);
         }
 
         if (InputGuy.instance.IsPressedDuringFrame && InputGuy.instance.IsHoveringOver(gameObject))
         {
             if (PlayerDataManager.Instance.CanClick)
-                 OnPeoplePress();
+                OnPeoplePress();
 
             PlayerDataManager.Instance.CanClick = false;
         }
 
-        if(PlayerDataManager.Instance.CanClick == false)
-             waveTimer += 1;
+        if (PlayerDataManager.Instance.CanClick == false)
+            waveTimer += 1;
 
         if (waveTimer >= PlayerDataManager.Instance.ClickDelay)
         {
@@ -60,12 +50,7 @@ public class NPCskeleton : MonoBehaviour
         if (Input.GetKey("mouse 0"))
         {
             happiness += PlayerDataManager.Instance.ClickPower;
-            Debug.Log("happiness = " + happiness);
+            Debug.Log("Moose = " + happiness);
         }
-    }
-
-    public void MakeHappy()
-    {
-        happiness = 10;
     }
 }
