@@ -37,6 +37,10 @@ public class PlayerDataManager
 	int playerPowerLevel = 5;
 	public int PlayerPowerLevel {get{ return playerPowerLevel;}set{ playerPowerLevel = value;}}
 
+	// amount of happiness that gets added with each click
+	int clickPower = 5;
+	public int ClickPower {get{ return clickPower;}set{ clickPower = value;}}
+
 	#endregion
 
 	#region BEHAVIORS
