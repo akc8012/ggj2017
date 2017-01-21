@@ -29,6 +29,14 @@ public class InputGuy : MonoBehaviour
 			GameObject.Find("Debug Canvas/Text").GetComponent<Text>().text = "android";
 	}
 
+	void LateUpdate()
+	{
+		if (IsPressed)
+			pressedLastFrame = true;
+		else
+			pressedLastFrame = false;
+	}
+
 	public bool OnAndroid { get { return (Application.platform == RuntimePlatform.Android); } }
 	public bool OnWindows { get { return (Application.platform == RuntimePlatform.WindowsEditor 
 		|| Application.platform == RuntimePlatform.WindowsPlayer); } }
@@ -47,12 +55,24 @@ public class InputGuy : MonoBehaviour
 	public Vector3 WorldPosition
 	{ get { return Camera.main.ScreenToWorldPoint(new Vector3(Position.x, Position.y, 10)); } }
 
+	// returns true if the mouse button, or finger, is held down
 	public bool IsPressed
 	{
 		get
 		{
 			if (OnWindows) return Input.GetMouseButton(0);
 			else return Input.touchCount != 0;
+		}
+	}
+
+	public bool pressedLastFrame = false;
+	// returns true if the mouse button, or finger, is held down
+	public bool IsPressedDuringFrame
+	{
+		get
+		{
+			if (pressedLastFrame) return false;
+			else return IsPressed;
 		}
 	}
 }

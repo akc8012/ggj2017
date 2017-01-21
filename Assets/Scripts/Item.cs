@@ -12,7 +12,7 @@ public class Item : MonoBehaviour
 	
 	void Update()
 	{
-		if (InputGuy.instance.IsPressed)
+		if (InputGuy.instance.IsPressedDuringFrame)
 		{
 			Vector3 screenToWorld = InputGuy.instance.WorldPosition;
 			transform.position = screenToWorld;
