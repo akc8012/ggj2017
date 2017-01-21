@@ -9,7 +9,6 @@ public class UpgradeButtonScript : MonoBehaviour
     [SerializeField]
     bool isBought = false;
 
-
     Button parentButton;
     [SerializeField]
     int price;
@@ -40,6 +39,7 @@ public class UpgradeButtonScript : MonoBehaviour
         {
             isBought = true;
             ScoreManager.instance.AddScore(-price);
+            PlayerDataManager.Instance.IncreasePowerLevel();
         }
     }
 
