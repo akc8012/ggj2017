@@ -7,7 +7,7 @@ public class ScoreManager : MonoBehaviour
 {
 	public static ScoreManager instance = null;
 
-	int score = 0;
+	int score = 1000;
 	public int Score { get { return score; } }
 
 	void Awake()
@@ -29,8 +29,8 @@ public class ScoreManager : MonoBehaviour
 
 	void SceneLoaded()
 	{
-		if (score != 0)
-			score = 0;  // THIS IS TOTALLY PLACEHODLER, dont actually use this
+		//if (score != 0)
+		//	score = 0;  // THIS IS TOTALLY PLACEHODLER, dont actually use this
 	}
 
 	public void AddScore(int amount)

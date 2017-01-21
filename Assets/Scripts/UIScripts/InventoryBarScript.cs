@@ -63,7 +63,6 @@ public class InventoryBarScript : MonoBehaviour
     #region Adding Items
     public void AddItem(string itemName)
     {
-        int itemCounter = 0;
         for(int i = 0; i < invItems.Length; i++)
         {
             if(invItems[i] == "Empty")
@@ -90,17 +89,30 @@ public class InventoryBarScript : MonoBehaviour
                 }
                 break;
             }
-            else if(invItems[i] != "Empty")
-            {
-                itemCounter++;  //Add a counter everytime if there is already an item in the inventory
-            }
-
-            if(itemCounter >= 7)
-            {
-                //Have some feedback telling the player they cannot buy anymore items.
-                invFull = true;
-            }
         }    
+    }
+
+    //Checks the inventory to see if it's full or not
+    public bool FullInventory()
+    {
+        int counter = 0;
+        for(int i = 0; i < invItems.Length; i++)
+        {
+            if(invItems[i] != "Empty")
+            {
+                counter++;
+            }
+        }
+        if(counter >= 8)
+        {
+            return true;
+        }
+        else if(counter < 8)
+        {
+            return false;
+        }
+
+        return false;
     }
 
     public void RemoveItem(int index)

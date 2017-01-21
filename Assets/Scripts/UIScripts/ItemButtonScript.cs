@@ -37,11 +37,14 @@ public class ItemButtonScript : MonoBehaviour
     {
         if(ScoreManager.instance.Score >= price)
         {
-            //Add item to the inventory of the player and subtract the price from the player score
-            if (!invScript.invFull)
+            switch(invScript.FullInventory())
             {
-                ScoreManager.instance.AddScore(-price);
-                invScript.SendMessage("AddItem", itemName);
+                case true:
+                    break;
+                case false:
+                    ScoreManager.instance.AddScore(-price);
+                    invScript.SendMessage("AddItem", itemName);
+                    break;
             }
         }
     }
