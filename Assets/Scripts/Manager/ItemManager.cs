@@ -34,7 +34,7 @@ public class ItemManager : MonoBehaviour
 	void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.P))
-			SpawnItem("BalloonItem");
+			SpawnItem("SyrupItem");
 	}
 
 	public void SpawnItem(string name)

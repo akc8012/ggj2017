@@ -65,6 +65,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1e63fc8cf3818e4faf442c8d610793f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syrupFloor: {fileID: 1000012016719510, guid: c7faa4b1a228a9249babfa3f8592e486, type: 2}
 --- !u!212 &212000013700150262
 SpriteRenderer:
   m_ObjectHideFlags: 1

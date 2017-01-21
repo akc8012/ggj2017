@@ -5,11 +5,6 @@ using UnityEngine;
 
 public class BalloonItem : DragItem
 {
-	protected override void Init()
-	{
-		objName = "BalloonItem";
-	}
-
 	protected override void PerformDropAction()
 	{
 		print("find nearest person, give them a balloon");
