@@ -13,7 +13,7 @@ public class InventoryClickScript : MonoBehaviour, IPointerDownHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        ItemManager.instance.SpawnItem(inventory.GetStringName(index), transform.position);
+        ItemManager.instance.SpawnItem(inventory.GetStringName(index));
         inventory.RemoveItem(index);
     }
 

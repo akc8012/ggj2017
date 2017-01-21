@@ -54,13 +54,6 @@ public class InventoryBarScript : MonoBehaviour
         }
     }
 
-
-    public void ClickFirst()
-    {
-        ItemManager.instance.SpawnItem("BalloonItem", inventorySlots[0].transform.position);
-    }
-
-
     // Update is called once per frame
     void Update()
     {
