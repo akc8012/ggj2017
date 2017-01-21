@@ -39,22 +39,38 @@ public class StoreUIScript : MonoBehaviour
         nextLevelButton = GameObject.Find("NextLevelButton").gameObject.GetComponent<Button>();
 
         //Sets all canvas groups to be invisible and non-active at the beginning
-        //storeGroup.alpha = 0;
-        //storeGroup.interactable = false;
-        //storeGroup.blocksRaycasts = false;
-        //itemGroup.alpha = 0;
-        //itemGroup.interactable = false;
-        //itemGroup.blocksRaycasts = false;
-        //upgradeGroup.alpha = 0;
-        //upgradeGroup.interactable = false;
-        //upgradeGroup.blocksRaycasts = false;
+        storeGroup.alpha = 0;
+        storeGroup.interactable = false;
+        storeGroup.blocksRaycasts = false;
+        itemGroup.alpha = 0;
+        itemGroup.interactable = false;
+        itemGroup.blocksRaycasts = false;
+        upgradeGroup.alpha = 0;
+        upgradeGroup.interactable = false;
+        upgradeGroup.blocksRaycasts = false;
         //----------------------------------------------------------------------//
 
+
+        upgradeButton.onClick.AddListener(SwitchToUpgrades);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            storeGroup.alpha = 1;
+            storeGroup.interactable = true;
+            storeGroup.blocksRaycasts = true;
 
+            upgradeGroup.alpha = 1;
+            upgradeGroup.interactable = true;
+            upgradeGroup.blocksRaycasts = true;
+        }
+    }
+
+    void SwitchToUpgrades()
+    {
+        Debug.Log("I have been clicked!");
     }
 }
