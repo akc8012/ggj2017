@@ -29,7 +29,7 @@ public class StoreUIScript : MonoBehaviour
     #endregion
 
     int upgradeIndex;
-    int itemIndex;
+    bool onUpgrades = true;
 
 
     // Use this for initialization
@@ -61,7 +61,6 @@ public class StoreUIScript : MonoBehaviour
 
 
         upgradeIndex = upgradeGroup.transform.GetSiblingIndex();
-        itemIndex = itemGroup.transform.GetSiblingIndex();
 
         upgradeButton.onClick.AddListener(SwitchToUpgrades);
         itemButton.onClick.AddListener(SwitchToItems);
@@ -84,6 +83,16 @@ public class StoreUIScript : MonoBehaviour
             itemGroup.alpha = 1;
         }
 
+        //Checks if the store screen is on upgrades or not.  Makes sure the folders flip when needed.
+        if(onUpgrades)
+        {
+            upgradeGroup.transform.SetSiblingIndex(upgradeIndex);
+        }
+        else
+        {
+            itemGroup.transform.SetSiblingIndex(upgradeIndex);
+        }
+
         //Update the CanadaCredit
         currencyText.text = ScoreManager.instance.Score.ToString();
     }
@@ -91,7 +100,7 @@ public class StoreUIScript : MonoBehaviour
     //Switches the Store Panel to Upgrades section
     void SwitchToUpgrades()
     {
-        upgradeGroup.transform.SetSiblingIndex(itemGroup.transform.GetSiblingIndex());
+        onUpgrades = true;
         upgradeGroup.interactable = true;
         upgradeGroup.blocksRaycasts = true;
 
@@ -102,10 +111,11 @@ public class StoreUIScript : MonoBehaviour
     //Switches the store panel to items section
     void SwitchToItems()
     {
+        onUpgrades = false;
         upgradeGroup.interactable = false;
         upgradeGroup.blocksRaycasts = false;
 
-        itemGroup.transform.SetSiblingIndex(upgradeGroup.transform.GetSiblingIndex());
+        itemGroup.transform.SetSiblingIndex(1);
         itemGroup.interactable = true;
         itemGroup.blocksRaycasts = true;
     }
