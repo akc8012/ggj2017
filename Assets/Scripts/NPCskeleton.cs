@@ -10,6 +10,7 @@ public class NPCskeleton : MonoBehaviour
 
     MoveGuy moveguy;
 
+    int waveTimer = 0;
 
     //Color color;  // color of Body randomized
 
@@ -19,7 +20,9 @@ public class NPCskeleton : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-        happiness = (Random.Range(0, 5));
+        PlayerDataManager.Instance.CanClick = true;
+
+        happiness = (Random.Range(0, 4));
     
         moveguy = GetComponent<MoveGuy>();
 	}
@@ -36,8 +39,19 @@ public class NPCskeleton : MonoBehaviour
 
         if (InputGuy.instance.IsPressedDuringFrame && InputGuy.instance.IsHoveringOver(gameObject))
         {
+            if (PlayerDataManager.Instance.CanClick)
+                 OnPeoplePress();
 
-            OnPeoplePress();
+            PlayerDataManager.Instance.CanClick = false;
+        }
+
+        if(PlayerDataManager.Instance.CanClick == false)
+             waveTimer += 1;
+
+        if (waveTimer >= PlayerDataManager.Instance.ClickDelay)
+        {
+            PlayerDataManager.Instance.CanClick = true;
+            waveTimer = 0;
         }
     }
 
