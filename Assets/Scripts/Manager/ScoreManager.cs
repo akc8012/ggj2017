@@ -8,6 +8,7 @@ public class ScoreManager : MonoBehaviour
 	public static ScoreManager instance = null;
 
 	int score = 0;
+	public int Score { get { return score; } }
 
 	void Awake()
 	{
@@ -36,5 +37,10 @@ public class ScoreManager : MonoBehaviour
 	{
 		score += amount;
 		print("new score is: " + score);
+	}
+
+	public void SetScore(int amount)
+	{
+		score = amount;
 	}
 }

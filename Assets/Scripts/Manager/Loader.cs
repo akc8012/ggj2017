@@ -7,13 +7,14 @@ public class Loader : MonoBehaviour
 {
 	[SerializeField] GameObject scoreManager;
 	[SerializeField] GameObject itemManager;
+	[SerializeField] GameObject inputGuy;
 
 	void Awake()
 	{
 		if (ScoreManager.instance == null)
 			Instantiate(scoreManager);
 
-		if (ItemManager.instance == null)
-			Instantiate(itemManager);
+		if (InputGuy.instance == null)
+			Instantiate(inputGuy);
 	}
 }
