@@ -41,7 +41,7 @@ public class PlayerDataManager
 	public int NumberOfPowerGauges{get{ return numberOfPowerGauges;}set{ numberOfPowerGauges = value;}}
 
 	// amount of happiness that gets added with each click
-	int clickPower = 5;
+	int clickPower = 1;
 	public int ClickPower {get{ return clickPower;}set{ clickPower = value;}}
 
 	#endregion
