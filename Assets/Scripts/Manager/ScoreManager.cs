@@ -7,7 +7,7 @@ public class ScoreManager : MonoBehaviour
 {
 	public static ScoreManager instance = null;
 
-	int score = 1000;
+	int score = 0;
 	public int Score { get { return score; } }
 
 	void Awake()
