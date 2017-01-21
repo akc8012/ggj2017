@@ -102,6 +102,7 @@ GameObject:
   - 114: {fileID: 24654654}
   - 114: {fileID: 24654653}
   - 114: {fileID: 24654652}
+  - 114: {fileID: 24654656}
   m_Layer: 5
   m_Name: Upgrade_0
   m_TagString: Untagged
@@ -219,6 +220,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 24654650}
+--- !u!114 &24654656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 24654650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2f06438bc4e230449c7d19650adaf77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isBought: 1
+  parentButton: {fileID: 0}
 --- !u!1 &395096453
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,6 +245,7 @@ GameObject:
   - 114: {fileID: 395096457}
   - 114: {fileID: 395096456}
   - 114: {fileID: 395096455}
+  - 114: {fileID: 395096459}
   m_Layer: 5
   m_Name: Upgrade_2
   m_TagString: Untagged
@@ -348,6 +363,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 395096453}
+--- !u!114 &395096459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 395096453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2f06438bc4e230449c7d19650adaf77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isBought: 0
+  parentButton: {fileID: 0}
 --- !u!1 &586875609
 GameObject:
   m_ObjectHideFlags: 0
@@ -545,6 +573,7 @@ GameObject:
   - 114: {fileID: 638483185}
   - 114: {fileID: 638483184}
   - 114: {fileID: 638483183}
+  - 114: {fileID: 638483187}
   m_Layer: 5
   m_Name: Upgrade_1
   m_TagString: Untagged
@@ -662,6 +691,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 638483181}
+--- !u!114 &638483187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 638483181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2f06438bc4e230449c7d19650adaf77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isBought: 0
+  parentButton: {fileID: 0}
 --- !u!1 &648710377
 GameObject:
   m_ObjectHideFlags: 0
@@ -871,6 +913,7 @@ GameObject:
   - 114: {fileID: 684186370}
   - 114: {fileID: 684186369}
   - 114: {fileID: 684186368}
+  - 114: {fileID: 684186372}
   m_Layer: 5
   m_Name: Upgrade_4
   m_TagString: Untagged
@@ -988,6 +1031,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 684186366}
+--- !u!114 &684186372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 684186366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2f06438bc4e230449c7d19650adaf77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isBought: 0
+  parentButton: {fileID: 0}
 --- !u!1 &883750131
 GameObject:
   m_ObjectHideFlags: 0
@@ -1702,6 +1758,7 @@ GameObject:
   - 114: {fileID: 1560816147}
   - 114: {fileID: 1560816146}
   - 114: {fileID: 1560816145}
+  - 114: {fileID: 1560816149}
   m_Layer: 5
   m_Name: Upgrade_3
   m_TagString: Untagged
@@ -1819,6 +1876,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1560816143}
+--- !u!114 &1560816149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1560816143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2f06438bc4e230449c7d19650adaf77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isBought: 0
+  parentButton: {fileID: 0}
 --- !u!1 &1704014157
 GameObject:
   m_ObjectHideFlags: 0
