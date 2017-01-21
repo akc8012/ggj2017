@@ -51,4 +51,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f472c170c2bc9db48abb1862de57ca1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DragItem: {fileID: 1000012462464136, guid: 2b64107f3f6ddce4092fb87868521396, type: 2}
+  dragItem: {fileID: 1000012462464136, guid: 48735f0dd1bc8a1429bd28a8049889aa, type: 2}
+  syrupItem: {fileID: 1000012223877478, guid: 0710abb513f08624d86701dece95d90d, type: 2}
+  bagMilkItem: {fileID: 1000013203589274, guid: c2c45e046eac3924d80b840755ff0eba,
+    type: 2}
+  balloonItem: {fileID: 1000010577637360, guid: 273a9d6aec63a3a44a5ad0f7bae14d94,
+    type: 2}
+  poutineItem: {fileID: 1000012418917776, guid: 5b51c65d54fa41340a5416d6de7b94e3,
+    type: 2}
+  paradeItem: {fileID: 1000011119385364, guid: 66177e175bb93e9458f4a62435f5f6ae, type: 2}
