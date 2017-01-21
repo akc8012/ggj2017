@@ -9,34 +9,48 @@ using System.Collections;
 
 public class PlaidMan_ClickAction : MonoBehaviour {
 
-	public GameObject[] children;
+	PlayerDataManager 
+		dataMan;
 
-	public AudioClip[] audioClips;	// cheering, hardClap, threeClaps
+	public GameObject[] 
+		children;
 
-	int counter = 0;
+	public AudioClip[] 
+		audioClips;	// cheering, hardClap, threeClaps
 
-	bool startCounting = false;
+	int 
+		counter = 0,
+		clickDelay = 60;
 
-	public AudioSource[] audioSource;
+	bool 
+		startCounting = false;
+
+	public AudioSource[] 
+		audioSource;
 
 	void Start () {
-		
+		dataMan = PlayerDataManager.Instance;
+		dataMan.CanClick = false;
 	}
 
 	void Update () {
 		if (startCounting)
 			counter++;
-		if (counter > 10) {
-			audioSource[1].volume = 0.4f;
-			audioSource[1].PlayOneShot(audioClips[1]);
+		if (counter > clickDelay) {
+			dataMan.CanClick = false;
 			startCounting = false;
 			counter = 0;
+		}
+		if (counter == 10) {
+			audioSource[1].volume = 0.4f;
+			audioSource[1].PlayOneShot(audioClips[1]);
 		}
 		if (counter == 5) {
 			audioSource[0].volume = 0.1f;
 			audioSource[0].PlayOneShot(audioClips[0]);
 		}
-		if (Input.GetMouseButtonDown (0)) {
+		if (Input.GetMouseButtonDown (0) && !dataMan.CanClick) {
+			dataMan.CanClick = true;
 			startCounting = true;
 			GetComponent<Animator> ().SetTrigger("ACTIVE");
 			for (int i = 0; i < this.children.Length; i++) {

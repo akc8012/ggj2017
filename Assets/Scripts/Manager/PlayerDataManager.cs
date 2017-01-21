@@ -34,7 +34,7 @@ public class PlayerDataManager
 	// all the variables and setters/getters used by DataManager
 
 	// Should be defaulted to 1:  Max of 5
-	int playerPowerLevel = 5;
+	int playerPowerLevel = 1;
 	public int PlayerPowerLevel {get{ return playerPowerLevel;}set{ playerPowerLevel = value;}}
 
 	int numberOfPowerGauges = 1;
@@ -43,6 +43,9 @@ public class PlayerDataManager
 	// amount of happiness that gets added with each click
 	int clickPower = 1;
 	public int ClickPower {get{ return clickPower;}set{ clickPower = value;}}
+
+	bool canClick = false;
+	public bool CanClick{get{return canClick; }set{ canClick = value;}}
 
 	#endregion
 
@@ -54,9 +57,6 @@ public class PlayerDataManager
 		clickPower += 5;
 		if (playerPowerLevel < 5) {
 			playerPowerLevel += 1;
-		} else {
-			playerPowerLevel = 1;
-			numberOfPowerGauges += 1;
 		}
 	}
 
