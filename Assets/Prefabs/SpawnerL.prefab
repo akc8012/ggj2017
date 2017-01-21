@@ -61,5 +61,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   testMan: {fileID: 1000011056612450, guid: 9f7d1a5aac2be0d4583d969a1370630b, type: 2}
   spawnTimeL: 5
-  speedX: 0.1
-  speedY: 0

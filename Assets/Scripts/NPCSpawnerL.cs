@@ -6,14 +6,16 @@ using System.Collections;
 public class NPCSpawnerL : MonoBehaviour
 {
     public GameObject testMan;
+    GameObject tempMan;
 
     public float spawnTimeL = 5.0f; // spawn timer
 
     // Use this for initialization
     void Start()
     {
-        GameObject tempMan = new GameObject();
+       tempMan = new GameObject();
         tempMan = (GameObject)Instantiate(testMan, transform.position, transform.rotation);
+        tempMan.GetComponent<MoveGuy>().Direction = 1;
 
         tempMan.GetComponent<MoveGuy>().speedX = 0.1f;
     }
@@ -25,12 +27,12 @@ public class NPCSpawnerL : MonoBehaviour
 
         if (spawnTimeL < 0)
         {
-            GameObject tempMan = new GameObject();
+            tempMan = new GameObject();
             tempMan = (GameObject)Instantiate(testMan, transform.position, transform.rotation);
+            tempMan.GetComponent<MoveGuy>().Direction = 1;
 
             tempMan.GetComponent<MoveGuy>().speedX = 0.1f;
             spawnTimeL = 5.0f;
         }
-
     }
 }

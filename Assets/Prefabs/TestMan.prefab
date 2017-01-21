@@ -105,6 +105,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedX: 0.1
   speedY: 0
+  target: {fileID: 4000012632380088}
+  screenPos: {x: 0, y: 0, z: 0}
 --- !u!114 &114000011593652320
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -116,4 +118,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9426113ec6369524f8fded53e81af928, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 4000012632380088}

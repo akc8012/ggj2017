@@ -9,9 +9,9 @@ public class NPCskeleton : MonoBehaviour
 
     int happiness; // canadians happiness level - will instantiate appropriate head!
 
-    //despawn stuff
-    public Transform target;
-    Camera cam;
+    ////despawn stuff
+    //public Transform target;
+    //Camera cam;
 
     //Color color;  // color of Body randomized
 
@@ -21,7 +21,7 @@ public class NPCskeleton : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-        cam = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
+        //cam = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
 
         happiness = (Random.Range(0, 5));
 	}
@@ -29,7 +29,7 @@ public class NPCskeleton : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        Vector3 screenPos = cam.WorldToScreenPoint(target.position);
+        //Vector3 screenPos = cam.WorldToScreenPoint(target.position);
 
         if (happiness == 5)
         {
@@ -43,11 +43,12 @@ public class NPCskeleton : MonoBehaviour
             OnPeoplePress();
         }
 
-        if (screenPos.x < 0 || screenPos.x > Screen.width)
-        {
-            Destroy(gameObject);
-            ScoreManager.instance.AddScore(-2);
-        }
+        //if (screenPos.x < 0 - 20 || screenPos.x > Screen.width + 20)
+        //{
+        //    Destroy(gameObject);
+        //    ScoreManager.instance.AddScore(-2);
+        //    Debug.Log("i'm dead");
+        //}
     }
 
     void OnPeoplePress()
