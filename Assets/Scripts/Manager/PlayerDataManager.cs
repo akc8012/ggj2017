@@ -37,6 +37,9 @@ public class PlayerDataManager
 	int playerPowerLevel = 5;
 	public int PlayerPowerLevel {get{ return playerPowerLevel;}set{ playerPowerLevel = value;}}
 
+	int numberOfPowerGauges = 1;
+	public int NumberOfPowerGauges{get{ return numberOfPowerGauges;}set{ numberOfPowerGauges = value;}}
+
 	// amount of happiness that gets added with each click
 	int clickPower = 5;
 	public int ClickPower {get{ return clickPower;}set{ clickPower = value;}}
@@ -45,6 +48,17 @@ public class PlayerDataManager
 
 	#region BEHAVIORS
 	// all functionality of DataManager
+
+	// increase power level
+	public void IncreasePowerLevel(){
+		clickPower += 5;
+		if (playerPowerLevel < 5) {
+			playerPowerLevel += 1;
+		} else {
+			playerPowerLevel = 1;
+			numberOfPowerGauges += 1;
+		}
+	}
 
 	#endregion
 }
