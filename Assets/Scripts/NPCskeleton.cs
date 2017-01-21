@@ -10,7 +10,9 @@ public class NPCskeleton : MonoBehaviour
 
     MoveGuy moveguy;
 
-    int waveTimer = 0;
+    GameObject waveTimer;
+
+    public GameObject plaidman;
 
     //Color color;  // color of Body randomized
 
@@ -20,12 +22,13 @@ public class NPCskeleton : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-        PlayerDataManager.Instance.CanClick = true;
-
         happiness = (Random.Range(0, 4));
     
         moveguy = GetComponent<MoveGuy>();
-	}
+
+        waveTimer = GameObject.Find("WaveTimerObject");
+
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -40,19 +43,19 @@ public class NPCskeleton : MonoBehaviour
         if (InputGuy.instance.IsPressedDuringFrame && InputGuy.instance.IsHoveringOver(gameObject))
         {
             if (PlayerDataManager.Instance.CanClick)
-                 OnPeoplePress();
+            {
+                Instantiate(plaidman, Vector3.zero, Quaternion.identity);
+                OnPeoplePress();
 
-            PlayerDataManager.Instance.CanClick = false;
+                PlayerDataManager.Instance.CanClick = false;
+            }      
         }
 
-        if(PlayerDataManager.Instance.CanClick == false)
-             waveTimer += 1;
+        if (PlayerDataManager.Instance.CanClick == false && waveTimer.GetComponent<WaveTimer>().isCounting == false)
+            waveTimer.GetComponent<WaveTimer>().isCounting = true;
 
-        if (waveTimer >= PlayerDataManager.Instance.ClickDelay)
-        {
-            PlayerDataManager.Instance.CanClick = true;
-            waveTimer = 0;
-        }
+        if (PlayerDataManager.Instance.CanClick)
+            Debug.Log(PlayerDataManager.Instance.CanClick);
     }
 
     void OnPeoplePress()
@@ -60,7 +63,7 @@ public class NPCskeleton : MonoBehaviour
         if (Input.GetKey("mouse 0"))
         {
             happiness += PlayerDataManager.Instance.ClickPower;
-            Debug.Log("happiness = " + happiness);
+            //Debug.Log("happiness = " + happiness);
         }
     }
 

@@ -7,14 +7,18 @@ public class Moose : MonoBehaviour
 {
     int happiness = 0;
 
-    int waveTimer = 0;
-
     MoveGuy moveguy;
+
+    public GameObject plaidman;
+
+    GameObject waveTimer;
 
     // Use this for initialization
     void Start ()
     {
         moveguy = GetComponent<MoveGuy>();
+
+        waveTimer = GameObject.Find("WaveTimerObject");
     }
 	
 	// Update is called once per frame
@@ -30,19 +34,19 @@ public class Moose : MonoBehaviour
         if (InputGuy.instance.IsPressedDuringFrame && InputGuy.instance.IsHoveringOver(gameObject))
         {
             if (PlayerDataManager.Instance.CanClick)
+            {
+                Instantiate(plaidman, Vector3.zero, Quaternion.identity);
                 OnPeoplePress();
 
-            PlayerDataManager.Instance.CanClick = false;
+                PlayerDataManager.Instance.CanClick = false;
+            }
         }
 
-        if (PlayerDataManager.Instance.CanClick == false)
-            waveTimer += 1;
+        if (PlayerDataManager.Instance.CanClick == false && waveTimer.GetComponent<WaveTimer>().isCounting == false)
+            waveTimer.GetComponent<WaveTimer>().isCounting = true;
 
-        if (waveTimer >= PlayerDataManager.Instance.ClickDelay)
-        {
-            PlayerDataManager.Instance.CanClick = true;
-            waveTimer = 0;
-        }
+        if (PlayerDataManager.Instance.CanClick)
+            Debug.Log(PlayerDataManager.Instance.CanClick);
     }
 
     void OnPeoplePress()
@@ -50,7 +54,7 @@ public class Moose : MonoBehaviour
         if (Input.GetKey("mouse 0"))
         {
             happiness += PlayerDataManager.Instance.ClickPower;
-            Debug.Log("Moose = " + happiness);
+           // Debug.Log("Moose = " + happiness);
         }
     }
 }
