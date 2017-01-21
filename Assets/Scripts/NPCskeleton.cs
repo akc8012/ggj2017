@@ -45,7 +45,7 @@ public class NPCskeleton : MonoBehaviour
     {
         if (Input.GetKey("mouse 0"))
         {
-            happiness += PlayerDataManager.Instance.ClickPower + 1;
+            happiness += PlayerDataManager.Instance.ClickPower;
             Debug.Log("happiness = " + happiness);
         }
     }
