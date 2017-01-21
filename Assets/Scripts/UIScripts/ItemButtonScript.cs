@@ -9,7 +9,11 @@ public class ItemButtonScript : MonoBehaviour
 
     [SerializeField]
     int price;
+    [SerializeField]
+    string itemName;
+
     Button parentButton;
+    InventoryBarScript invScript;
 
     //Get reference to player for what's in the inventory
 
@@ -17,6 +21,7 @@ public class ItemButtonScript : MonoBehaviour
     void Start()
     {
         parentButton = this.GetComponent<Button>();
+        invScript = GameObject.Find("InventoryBar").GetComponent<InventoryBarScript>();
 
         parentButton.onClick.AddListener(PayForItem);
     }
@@ -33,8 +38,11 @@ public class ItemButtonScript : MonoBehaviour
         if(ScoreManager.instance.Score >= price)
         {
             //Add item to the inventory of the player and subtract the price from the player score
-
-            ScoreManager.instance.AddScore(-price);
+            if (!invScript.invFull)
+            {
+                ScoreManager.instance.AddScore(-price);
+                invScript.SendMessage("AddItem", itemName);
+            }
         }
     }
 }
