@@ -1,5 +1,4 @@
 ﻿// Andrew - singleton class to handle input across pc and phone
-// Andrew
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -74,5 +73,25 @@ public class InputGuy : MonoBehaviour
 			if (pressedLastFrame) return false;
 			else return IsPressed;
 		}
+	}
+
+	// returns the gameobject currently being hovered over
+	public GameObject GetHoveringOver()
+	{
+		RaycastHit hit;
+		Ray ray = Camera.main.ScreenPointToRay(Position);
+
+		if (Physics.Raycast(ray, out hit))
+		{
+			GameObject objectHit = hit.transform.gameObject;
+			return objectHit;
+		}
+		return null;
+	}
+
+	// returns true if passed in object IS the one we're hovering over
+	public bool IsHoveringOver(GameObject obj)
+	{
+		return (obj == GetHoveringOver());
 	}
 }

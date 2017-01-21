@@ -17,5 +17,7 @@ public class Item : MonoBehaviour
 			Vector3 screenToWorld = InputGuy.instance.WorldPosition;
 			transform.position = screenToWorld;
 		}
+
+		print(InputGuy.instance.GetHoveringOver() == gameObject);
 	}
 }
