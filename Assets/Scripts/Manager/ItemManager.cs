@@ -22,13 +22,13 @@ public class ItemManager : MonoBehaviour
 
 	void Start()
 	{
-		SpawnItem();
+		//SpawnItem();
 	}
 
 	void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.Space))
-			SpawnItem();
+		//if (Input.GetKeyDown(KeyCode.Space))
+		//	SpawnItem();
 	}
 
 	public void SpawnItem()    // pass in position
@@ -36,7 +36,7 @@ public class ItemManager : MonoBehaviour
 		Instantiate(DragItem, new Vector3(-1.16f, 0.42f, 0), Quaternion.identity);
 	}
 
-	public IEnumerator SpawnAfterTime()
+	public IEnumerator SpawnAfterTime()		// for testing
 	{
 		yield return new WaitForSeconds(3);
 		SpawnItem();

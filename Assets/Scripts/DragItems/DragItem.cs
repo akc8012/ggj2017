@@ -20,14 +20,20 @@ public class DragItem : MonoBehaviour
 			transform.position = screenToWorld;
 		}
 		else if (!WithinLeniencyFrames())
-			DestroyThenMakeNew();
+			DestroyThenMakeNew();   // MAKE SURE YOU PERFORM DROP ACTION
+
+		PerformContinuousAction();
 	}
 
-	void DestroyThenMakeNew()
+	void DestroyThenMakeNew()	// for testing
 	{
+		PerformDropAction();
 		ItemManager.instance.StartCoroutine(ItemManager.instance.SpawnAfterTime());
 		Destroy(gameObject);
 	}
+
+	protected virtual void PerformDropAction() { }          // maybe make this abstract?
+	protected virtual void PerformContinuousAction() { }	// for bagged milk?
 
 	bool WithinLeniencyFrames() { return Time.frameCount-spawnedFrame < leniencyFrames; }
 }
