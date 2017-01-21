@@ -3,16 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BalloonItem : DragItem
+public class ParadeItem : DragItem
 {
 	protected override void Init()
 	{
-		objName = "BalloonItem";
+		objName = "ParadeItem";
 	}
 
 	protected override void PerformDropAction()
 	{
-		print("find nearest person, give them a balloon");
+		print("make a parade, everyone is happy");
 	}
 
 }
