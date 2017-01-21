@@ -7,8 +7,7 @@ using System.Collections.Generic;
 public class ItemManager : MonoBehaviour
 {
 	public static ItemManager instance = null;
-
-	List<Item> items = new List<Item>();
+	[SerializeField] GameObject DragItem;
 
 	void Awake()
 	{
@@ -23,7 +22,24 @@ public class ItemManager : MonoBehaviour
 
 	void Start()
 	{
-		items.Clear();
+		SpawnItem();
+	}
+
+	void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.Space))
+			SpawnItem();
+	}
+
+	public void SpawnItem()    // pass in position
+	{
+		Instantiate(DragItem, new Vector3(-1.16f, 0.42f, 0), Quaternion.identity);
+	}
+
+	public IEnumerator SpawnAfterTime()
+	{
+		yield return new WaitForSeconds(3);
+		SpawnItem();
 	}
 
 	void SceneLoaded()

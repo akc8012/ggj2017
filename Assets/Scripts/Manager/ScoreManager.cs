@@ -36,7 +36,6 @@ public class ScoreManager : MonoBehaviour
 	public void AddScore(int amount)
 	{
 		score += amount;
-		print("new score is: " + score);
 	}
 
 	public void SetScore(int amount)

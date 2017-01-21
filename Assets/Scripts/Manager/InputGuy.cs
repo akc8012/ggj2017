@@ -46,7 +46,7 @@ public class InputGuy : MonoBehaviour
 		get
 		{
 			if (OnWindows) return Input.mousePosition;
-			else return Input.GetTouch(0).position;
+			else return	(Input.touchCount != 0) ? Input.GetTouch(0).position : Vector2.zero;
 		}
 	}
 
