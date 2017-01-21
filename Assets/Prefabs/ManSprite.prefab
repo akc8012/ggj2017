@@ -23,6 +23,7 @@ GameObject:
   - 114: {fileID: 114000012262532610}
   - 114: {fileID: 114000012237216960}
   - 114: {fileID: 114000010160174190}
+  - 65: {fileID: 65000014022595820}
   m_Layer: 0
   m_Name: ManSprite
   m_TagString: Untagged
@@ -54,7 +55,7 @@ Transform:
   m_GameObject: {fileID: 1000010915183950}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4000013883825862}
@@ -73,6 +74,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4000012184431432}
   m_RootOrder: 0
+--- !u!65 &65000014022595820
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010915183950}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 20, y: 20, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114000010160174190
 MonoBehaviour:
   m_ObjectHideFlags: 1

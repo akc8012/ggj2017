@@ -44,7 +44,7 @@ public class PlayerDataManager
 	int clickPower = 1;
 	public int ClickPower {get{ return clickPower;}set{ clickPower = value;}}
 
-	bool canClick = false;
+	bool canClick = true;
 	public bool CanClick{get{return canClick; }set{ canClick = value;}}
 
 	int clickDelay = 60;

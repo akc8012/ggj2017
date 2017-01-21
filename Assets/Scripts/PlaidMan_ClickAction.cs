@@ -30,7 +30,7 @@ public class PlaidMan_ClickAction : MonoBehaviour {
 
 	void Start () {
 		dataMan = PlayerDataManager.Instance;
-		dataMan.CanClick = false;
+		dataMan.CanClick = true;
 	}
 
 	void Update () {
@@ -40,7 +40,7 @@ public class PlaidMan_ClickAction : MonoBehaviour {
 		if (startCounting)
 			counter++;
 		if (counter > clickDelay) {
-			dataMan.CanClick = false;
+			dataMan.CanClick = true;
 			startCounting = false;
 			counter = 0;
 		}
@@ -52,8 +52,8 @@ public class PlaidMan_ClickAction : MonoBehaviour {
 			audioSource[0].volume = 0.1f;
 			audioSource[0].PlayOneShot(audioClips[0]);
 		}
-		if ((Input.GetMouseButtonDown (0) || InputGuy.instance.IsPressedDuringFrame) && !dataMan.CanClick) {
-			dataMan.CanClick = true;
+		if ((Input.GetMouseButtonDown (0) || InputGuy.instance.IsPressedDuringFrame) && dataMan.CanClick) {
+			dataMan.CanClick = false;
 			startCounting = true;
 			GetComponent<Animator> ().SetTrigger("ACTIVE");
 			for (int i = 0; i < this.children.Length; i++) {
