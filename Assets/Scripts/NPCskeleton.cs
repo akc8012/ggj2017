@@ -27,7 +27,7 @@ public class NPCskeleton : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        if (happiness >= 5)
+        if (happiness > 5)
         {
             moveguy.Stop();
             Destroy(gameObject, 0.7f);
