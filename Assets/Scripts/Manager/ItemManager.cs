@@ -1,13 +1,19 @@
 ﻿// Andrew
 using UnityEngine;
 using System.Collections;
-using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 
 public class ItemManager : MonoBehaviour
 {
 	public static ItemManager instance = null;
-	[SerializeField] GameObject DragItem;
+	[SerializeField] GameObject dragItem;	// EMPTY - use this for testing
+	[SerializeField] GameObject syrupItem;
+	[SerializeField] GameObject bagMilkItem;
+	[SerializeField] GameObject balloonItem;
+	[SerializeField] GameObject poutineItem;
+	[SerializeField] GameObject paradeItem;
+	GameObject[] dragItems;
+	string[] itemNames;
 
 	void Awake()
 	{
@@ -17,12 +23,12 @@ public class ItemManager : MonoBehaviour
 			Destroy(gameObject);
 
 		DontDestroyOnLoad(gameObject);
-		SceneManager.sceneLoaded += (scene, loadingMode) => { SceneLoaded(); };
 	}
 
 	void Start()
 	{
-		//SpawnItem();
+		dragItems = new GameObject[] { dragItem, syrupItem, bagMilkItem, balloonItem, poutineItem, paradeItem };
+		itemNames = new string[] { "DragItem", "SyrupItem", "BagMilkItem", "BalloonItem", "PoutineItem", "ParadeItem" };
 	}
 
 	void Update()
@@ -31,15 +37,20 @@ public class ItemManager : MonoBehaviour
 		//	SpawnItem();
 	}
 
-	public void SpawnItem()    // pass in position
+	public void SpawnItem(string name, Vector3 startPos)
 	{
-		Instantiate(DragItem, new Vector3(-1.16f, 0.42f, 0), Quaternion.identity);
-	}
+		int ndx = -1;
+		for (int i = 0; i < itemNames.Length; i++)
+		{
+			if (name == itemNames[i])
+			{
+				ndx = i;
+				break;
+			}
+		}
 
-	public IEnumerator SpawnAfterTime()		// for testing
-	{
-		yield return new WaitForSeconds(3);
-		SpawnItem();
+		GameObject obj = dragItems[ndx];
+		Instantiate(obj, new Vector3(-1.16f, 0.42f, 0), Quaternion.identity);
 	}
 
 	void SceneLoaded()
