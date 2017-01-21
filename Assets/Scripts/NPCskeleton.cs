@@ -6,7 +6,7 @@ using System.Collections;
 public class NPCskeleton : MonoBehaviour
 {
     int happiness; // canadians happiness level - will instantiate appropriate head!
-    public int hapiness { set { happiness = value; } }
+    public int Happiness { get { return happiness; } }
 
     MoveGuy moveguy;
 
