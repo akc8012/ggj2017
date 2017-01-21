@@ -24,6 +24,10 @@ public class StoreUIScript : MonoBehaviour
     Button nextLevelButton;
     #endregion
 
+    #region Declaring War against the Communist dickheads over in North Korea
+    Text currencyText;
+    #endregion
+
 
     // Use this for initialization
     void Start()
@@ -33,6 +37,8 @@ public class StoreUIScript : MonoBehaviour
         upgradeGroup = GameObject.Find("UpgradePanel").gameObject.GetComponent<CanvasGroup>();
         itemGroup = GameObject.Find("ItemPanel").gameObject.GetComponent<CanvasGroup>();
         #endregion
+
+        currencyText = GameObject.Find("CurrencyText").GetComponent<Text>();
 
         upgradeButton = GameObject.Find("UpgradesButton").gameObject.GetComponent<Button>();
         itemButton = GameObject.Find("ItemsButton").gameObject.GetComponent<Button>();
@@ -69,6 +75,9 @@ public class StoreUIScript : MonoBehaviour
             upgradeGroup.interactable = true;
             upgradeGroup.blocksRaycasts = true;
         }
+
+        //Update the CanadaCredit
+        currencyText.text = ScoreManager.instance.Score.ToString();
     }
 
     //Switches the Store Panel to Upgrades section

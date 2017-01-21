@@ -8,7 +8,8 @@ public class UpgradeButtonScript : MonoBehaviour
 {
     [SerializeField]
     bool isBought = false;
-    [SerializeField]
+
+
     Button parentButton;
     [SerializeField]
     int price;
@@ -35,8 +36,11 @@ public class UpgradeButtonScript : MonoBehaviour
     {
         //Check to make sure the player has the money.
         //If so, buy the upgrade and change isBought to true
-
-        isBought = true;
+        if (ScoreManager.instance.Score >= price)
+        {
+            isBought = true;
+            ScoreManager.instance.AddScore(-price);
+        }
     }
 
     public void ResetPayment()
