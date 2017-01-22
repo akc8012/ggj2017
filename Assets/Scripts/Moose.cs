@@ -13,6 +13,8 @@ public class Moose : MonoBehaviour
 
     GameObject waveTimer;
 
+   // bool isDead = false;
+
     // Use this for initialization
     void Start ()
     {
@@ -29,6 +31,7 @@ public class Moose : MonoBehaviour
             moveguy.Stop();
             Destroy(gameObject, 0.7f);
             ScoreManager.instance.AddScore(20);
+           // isDead = true;
         }
 
         if (InputGuy.instance.IsPressedDuringFrame && InputGuy.instance.IsHoveringOver(gameObject))
