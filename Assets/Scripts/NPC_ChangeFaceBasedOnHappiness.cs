@@ -28,50 +28,47 @@ public class NPC_ChangeFaceBasedOnHappiness : MonoBehaviour {
 
 	void Update () {
 		if (!IsMoose) {
-			switch (skeletonScript.Happiness) {
-			case 0:
+			if (skeletonScript.Happiness == 0) {
 				face.GetComponent<SpriteRenderer> ().sprite = spriteList [0];
 				particle.GetComponent<ParticleSystemRenderer> ().material = changingMat [0];
-				break;
-			case 1:
+			}
+			if (skeletonScript.Happiness == 1) {
 				face.GetComponent<SpriteRenderer> ().sprite = spriteList [1];
 				particle.GetComponent<ParticleSystemRenderer> ().material = changingMat [1];
-				break;
-			case 2:
+			}
+			if (skeletonScript.Happiness == 2) {
 				face.GetComponent<SpriteRenderer> ().sprite = spriteList [2];
 				particle.GetComponent<ParticleSystemRenderer> ().material = changingMat [2];
-				break;
-			case 3:
+			}
+			if (skeletonScript.Happiness == 3) {
 				face.GetComponent<SpriteRenderer> ().sprite = spriteList [3];
 				particle.GetComponent<ParticleSystemRenderer> ().material = changingMat [3];
-				break;
-			case 4:
+			}
+			if (skeletonScript.Happiness >= 4) {
 				face.GetComponent<SpriteRenderer> ().sprite = spriteList [4];
 				particle.GetComponent<ParticleSystemRenderer> ().material = changingMat [4];
-				break;
 			}
 		} else {
-			switch (GetComponent<Moose>().Happiness) {
-			case 0:
+			
+			if (GetComponent<Moose> ().Happiness == 0) {
 				face.GetComponent<SpriteRenderer> ().sprite = spriteList [0];
 				particle.GetComponent<ParticleSystemRenderer> ().material = changingMat [0];
-				break;
-			case 3:
+			}
+			if (GetComponent<Moose> ().Happiness == 3) {
 				face.GetComponent<SpriteRenderer> ().sprite = spriteList [1];
 				particle.GetComponent<ParticleSystemRenderer> ().material = changingMat [1];
-				break;
-			case 5:
+			}
+			if (GetComponent<Moose> ().Happiness == 5) {
 				face.GetComponent<SpriteRenderer> ().sprite = spriteList [2];
 				particle.GetComponent<ParticleSystemRenderer> ().material = changingMat [2];
-				break;
-			case 7:
+			}
+			if (GetComponent<Moose> ().Happiness == 7) {
 				face.GetComponent<SpriteRenderer> ().sprite = spriteList [3];
 				particle.GetComponent<ParticleSystemRenderer> ().material = changingMat [3];
-				break;
-			case 10:
+			}
+			if (GetComponent<Moose> ().Happiness >= 10) {
 				face.GetComponent<SpriteRenderer> ().sprite = spriteList [4];
 				particle.GetComponent<ParticleSystemRenderer> ().material = changingMat [4];
-				break;
 			}
 		}
 	}

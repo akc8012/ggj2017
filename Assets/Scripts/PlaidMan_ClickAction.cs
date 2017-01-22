@@ -35,12 +35,20 @@ public class PlaidMan_ClickAction : MonoBehaviour {
 		// Start the applause, waving, etc
 		startCounting = true;
 		GetComponent<Animator> ().SetTrigger("ACTIVE");
-		for (int i = 0; i < this.children.Length; i++) {
+		for (int i = 0; i < PlayerDataManager.Instance.PlayerPowerLevel - 1; i++) {
 			children[i].GetComponent<Animator> ().SetTrigger("ACTIVE");
+		}
+		for (int i = 0; i < children.Length; i++) {
+			children [i].SetActive (false);
 		}
 	}
 
 	void Update () {
+
+		for (int i = 0; i < PlayerDataManager.Instance.PlayerPowerLevel - 1; i++) {
+			children [i].SetActive (true);
+			children[i].GetComponent<Animator> ().SetTrigger("ACTIVE");
+		}
 
 		if (startCounting)
 			counter++;
