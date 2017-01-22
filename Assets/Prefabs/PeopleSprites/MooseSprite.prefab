@@ -212,7 +212,7 @@ MonoBehaviour:
   speedX: 0
   speedY: 0
   screenPos: {x: 0, y: 0, z: 0}
-  isMoose: 0
+  isMoose: 1
 --- !u!198 &198000010883247022
 ParticleSystem:
   m_ObjectHideFlags: 1
