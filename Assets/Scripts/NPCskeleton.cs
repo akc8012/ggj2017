@@ -79,6 +79,7 @@ public class NPCskeleton : MonoBehaviour
 
     public void MakeHappy()
     {
-        happiness = 4;		// needs to be set to 4 to work with Tristan face changing
-    }
+        happiness = 4;      // needs to be set to 4 to work with Tristan face changing
+		particle.SetActive(true);
+	}
 }
