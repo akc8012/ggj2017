@@ -16,8 +16,13 @@ public class Click_MooseIsComingScreenWarning : MonoBehaviour {
 
     bool checkyCheck = false;
 
-	void Start () {
-	
+    public AudioClip mooseComes;
+    AudioSource audiosource;
+
+
+	void Start ()
+    {
+        audiosource = GetComponent<AudioSource>();
 	}
 
 	void Update ()
@@ -29,12 +34,15 @@ public class Click_MooseIsComingScreenWarning : MonoBehaviour {
 
         if(mooseCounter <= 0)
         {
-            // play warning sound
             mooseCounter = 2;
             textSizeCounter = 1;
             this.GetComponent<Text>().fontSize = textSizeCounter;
+
             if (checkyCheck)
+            {
                 GameObject.Find("SpawnerR").GetComponent<NPCSpawnerR>().spawnMoose();
+            }
+            
             mooseCounterStart = false;
         }
 
@@ -55,7 +63,7 @@ public class Click_MooseIsComingScreenWarning : MonoBehaviour {
     public void CallText(bool check)
     {
         checkyCheck = check;
-
+        audiosource.PlayOneShot(mooseComes, 0.8f);
         startBool = true;
     }
 }
