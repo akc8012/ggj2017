@@ -42,6 +42,7 @@ public class MoveGuy : MonoBehaviour
 		if (storeDelayBool) {
 			storeDelay -= Time.deltaTime;
 			if (storeDelay <= 0) {
+				ScoreManager.instance.AddScore(-10);
 				storeDelayBool = false;
 				storeDelay = 1;
 				store.GetComponent<StoreUIScript>().TurnStoreOn();
@@ -56,14 +57,13 @@ public class MoveGuy : MonoBehaviour
                 if (isMoose)
                 {
                     Destroy(this.gameObject, 1.1f);
-                    ScoreManager.instance.AddScore(-10);
 					storeDelayBool = true;
                 }
 
                 else
                 {
-                    Destroy(this.gameObject, 1.1f);
-                    ScoreManager.instance.AddScore(-2);
+                    Destroy(this.gameObject);
+					ScoreManager.instance.AddScore(-2);
                     GameObject.Find("Canvas").GetComponent<NPC_LeftScreenDeath>().StartExplosion("left");
                 }
             }
