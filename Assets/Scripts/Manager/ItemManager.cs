@@ -6,7 +6,6 @@ using System.Collections.Generic;
 public class ItemManager : MonoBehaviour
 {
 	public static ItemManager instance = null;
-	[SerializeField] GameObject dragItem;	// EMPTY - use this for testing
 	[SerializeField] GameObject syrupItem;
 	[SerializeField] GameObject bagMilkItem;
 	[SerializeField] GameObject balloonItem;
@@ -27,14 +26,14 @@ public class ItemManager : MonoBehaviour
 
 	void Start()
 	{
-		dragItems = new GameObject[] { dragItem, syrupItem, bagMilkItem, balloonItem, poutineItem, paradeItem };
-		itemNames = new string[] { "DragItem", "SyrupItem", "BagMilkItem", "BalloonItem", "PoutineItem", "ParadeItem" };
+		dragItems = new GameObject[] { syrupItem, bagMilkItem, balloonItem, poutineItem, paradeItem };
+		itemNames = new string[] { "SyrupItem", "BagMilkItem", "BalloonItem", "PoutineItem", "ParadeItem" };
 	}
 
 	void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.P))
-			SpawnItem("PoutineItem");
+			SpawnItem("BagMilkItem");
 	}
 
 	public void SpawnItem(string name)
@@ -56,10 +55,8 @@ public class ItemManager : MonoBehaviour
 
 	public IEnumerator DoPoutineTimer()
 	{
-		print("poutine on");
 		PlayerDataManager.Instance.PoutineActivate();
 		yield return new WaitForSeconds(5);
 		PlayerDataManager.Instance.PoutineDeactivate();
-		print("poutine off");
 	}
 }

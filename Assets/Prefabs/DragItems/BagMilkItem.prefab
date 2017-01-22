@@ -53,6 +53,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 030e393964ee2d346b30908d815ff275, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rainParticles: {fileID: 1000010807567162, guid: ebe6c5e6ee0daa24399c670b2a7d4f5a,
+    type: 2}
 --- !u!114 &114000011346936508
 MonoBehaviour:
   m_ObjectHideFlags: 1

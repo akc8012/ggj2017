@@ -6,6 +6,7 @@ public class DragItem : MonoBehaviour
 {
 	int spawnedFrame;				// at what game frame did we spawn?
 	const int leniencyFrames = 30;  // how many frames we can go before we let go
+	protected bool canBeDropped = true;
 
 	void Start()
 	{
@@ -22,7 +23,7 @@ public class DragItem : MonoBehaviour
 			Vector3 screenToWorld = InputGuy.instance.WorldPosition;
 			transform.position = screenToWorld;
 		}
-		else if (!WithinLeniencyFrames())
+		else if (!WithinLeniencyFrames() && canBeDropped)
 		{
 			PerformDropAction();
 			Destroy(gameObject);
