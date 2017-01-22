@@ -14,6 +14,9 @@ public class NPCSpawnerR : MonoBehaviour
     public float spawnTimeR = 5.0f;
     public float spawnTimeRMax = 5.0f;
 
+    GameObject redText;
+    GameObject whiteText;
+
     // Use this for initialization
     void Start()
     {
@@ -29,7 +32,11 @@ public class NPCSpawnerR : MonoBehaviour
 
         tempMan.GetComponent<MoveGuy>().Direction = 0;
         tempMan.GetComponent<MoveGuy>().speedX = -5.0f;
+
+        redText = GameObject.Find("Canvas/Text RED");
+        whiteText = GameObject.Find("Canvas/Text WHITE");
     }
+
 
     // Update is called once per frame
     void Update()
@@ -53,16 +60,15 @@ public class NPCSpawnerR : MonoBehaviour
 
         if(LevelManager.instance.LevelTimer <= 0)
         {
-
-
-            spawnMoose();
+            redText.GetComponent<Click_MooseIsComingScreenWarning>().CallText(false);
+            whiteText.GetComponent<Click_MooseIsComingScreenWarning>().CallText(true);
             FasterSpawn();
 
             LevelManager.instance.Stoptimer();
         }
     }
 
-    void spawnMoose()
+    public void spawnMoose()
     {
         tempMoose = (GameObject)Instantiate(moose, transform.position, transform.rotation);
 
