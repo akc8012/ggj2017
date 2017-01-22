@@ -28,10 +28,12 @@ public class NPC_LeftScreenDeath : MonoBehaviour {
 				rightExplosion.transform.localPosition = new Vector3 (Screen.width / 2 + 100 - enterScreenTimer, 0, 0);
 				enterScreenTimer += 2.5f;
 
+				if(enterScreenTimer == 5)
+					audioSource.Play ();
+
 				if (enterScreenTimer >= 100) {
 					enterScreenTimer = 0;
 					rightExplosion.transform.localPosition = new Vector3 (Screen.width / 2 + 100, 0, 0);
-					audioSource.Play ();
 					startExplosion = false;
 					rightBool = false;
 				}
@@ -40,10 +42,12 @@ public class NPC_LeftScreenDeath : MonoBehaviour {
 				leftExplosion.transform.localPosition = new Vector3 (-Screen.width / 2 - 100 + enterScreenTimer, 0, 0);
 				enterScreenTimer += 2.5f;
 
+				if(enterScreenTimer == 5)
+					audioSource.Play ();
+
 				if (enterScreenTimer >= 100) {
 					enterScreenTimer = 0;
 					leftExplosion.transform.localPosition = new Vector3 (-Screen.width / 2 - 100, 0, 0);
-					audioSource.Play ();
 					startExplosion = false;
 					leftBool = false;
 				}
