@@ -12,12 +12,10 @@ public class TitleScreenUI : MonoBehaviour
 	void Start()
 	{
 		playButt.onClick.AddListener(PlayGame);
-		print("jere");
 	}
 
 	void PlayGame()
 	{
-		print("click");
 		SceneManager.LoadScene("TristanScene (Duplicate)", LoadSceneMode.Single);
 	}
 }

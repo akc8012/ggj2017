@@ -23,7 +23,7 @@ public class ScoreManager : MonoBehaviour
 	}
 
 	// also works as Reset
-	void Init()
+	public void Init()
 	{
 		score = 10;
 	}
@@ -46,6 +46,7 @@ public class ScoreManager : MonoBehaviour
 
 		if (score < 0)
 		{
+			LevelManager.instance.Stoptimer();
 			SceneManager.LoadScene("GameOverScene(Andrew)", LoadSceneMode.Single);
 		}
 	}
