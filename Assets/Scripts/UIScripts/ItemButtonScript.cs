@@ -15,6 +15,8 @@ public class ItemButtonScript : MonoBehaviour
     Button parentButton;
     InventoryBarScript invScript;
 
+    Text displayPrice;
+
     //Get reference to player for what's in the inventory
 
     // Use this for initialization
@@ -22,6 +24,8 @@ public class ItemButtonScript : MonoBehaviour
     {
         parentButton = this.GetComponent<Button>();
         invScript = GameObject.Find("InventoryBar").GetComponent<InventoryBarScript>();
+
+        displayPrice = gameObject.transform.FindChild("Price").GetComponent<Text>();
 
         parentButton.onClick.AddListener(PayForItem);
     }
@@ -37,6 +41,8 @@ public class ItemButtonScript : MonoBehaviour
         {
             parentButton.interactable = true;
         }
+
+        displayPrice.text = "$" + price.ToString();
     }
 
     //Check to see if the player has the score to be able to pay for the item.

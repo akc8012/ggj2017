@@ -13,11 +13,15 @@ public class UpgradeButtonScript : MonoBehaviour
     [SerializeField]
     int price;
 
+    Text upgradePrice;
+
     // Use this for initialization
     void Start()
     {
         parentButton = this.GetComponent<Button>();
         isBought = false;
+
+        upgradePrice = gameObject.transform.FindChild("Price").GetComponent<Text>();
 
         parentButton.onClick.AddListener(IsPaidFor);
     }
@@ -38,6 +42,8 @@ public class UpgradeButtonScript : MonoBehaviour
         {
             parentButton.interactable = false;
         }
+
+        upgradePrice.text = "$" + price.ToString();
     }
 
     public void IsPaidFor()

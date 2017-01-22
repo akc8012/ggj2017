@@ -119,15 +119,7 @@ public class StoreUIScript : MonoBehaviour
     //Goes to the next level
     void GoToNextLevel()
     {
-        storeGroup.alpha = 0;
-        storeGroup.interactable = false;
-        storeGroup.blocksRaycasts = false;
-        itemGroup.alpha = 0;
-        itemGroup.interactable = false;
-        itemGroup.blocksRaycasts = false;
-        upgradeGroup.alpha = 0;
-        upgradeGroup.interactable = false;
-        upgradeGroup.blocksRaycasts = false;
+        TurnStoreOff();
     }
 
     public void TurnStoreOn()
