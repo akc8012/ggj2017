@@ -16,6 +16,8 @@ public class GameOverUI : MonoBehaviour
 
 	void PlayGameAgain()
 	{
+		// CALL ALL THE RESET FUNCTIONS HERE
+
 		SceneManager.LoadScene("TristanScene (Duplicate)", LoadSceneMode.Single);
 	}
 }

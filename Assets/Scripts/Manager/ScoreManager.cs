@@ -7,7 +7,7 @@ public class ScoreManager : MonoBehaviour
 {
 	public static ScoreManager instance = null;
 
-	int score = 0;
+	int score;
 	public int Score { get { return score; } }
 
 	void Awake()
@@ -19,12 +19,19 @@ public class ScoreManager : MonoBehaviour
 
 		DontDestroyOnLoad(gameObject);
 		SceneManager.sceneLoaded += (scene, loadingMode) => { SceneLoaded(); };
+		Init();
+	}
+
+	// also works as Reset
+	void Init()
+	{
+		score = 10;
 	}
 
 	void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.Space))
-			AddScore(5);
+			AddScore(50);
 	}
 
 	void SceneLoaded()
@@ -36,10 +43,20 @@ public class ScoreManager : MonoBehaviour
 	public void AddScore(int amount)
 	{
 		score += amount;
+
+		if (score < 0)
+		{
+			SceneManager.LoadScene("GameOverScene(Andrew)", LoadSceneMode.Single);
+		}
 	}
 
 	public void SetScore(int amount)
 	{
 		score = amount;
+
+		if (score < 0)
+		{
+			SceneManager.LoadScene("GameOverScene(Andrew)", LoadSceneMode.Single);
+		}
 	}
 }
