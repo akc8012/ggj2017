@@ -52,8 +52,15 @@ public class PlaidMan_ClickAction : MonoBehaviour {
 			audioSource[1].PlayOneShot(audioClips[1]);
 		}
 		if (counter == 5) {
-			audioSource[0].volume = 0.1f;
-			audioSource[0].PlayOneShot(audioClips[0]);
+			int rand = Random.Range (0, 5);
+
+			if (rand != 0) {
+				audioSource [0].volume = 0.1f;
+				audioSource [0].PlayOneShot (audioClips [0]);
+			} else {
+				audioSource [0].volume = 0.6f;
+				audioSource [0].PlayOneShot (audioClips [3]);
+			}
 		}
 	}
 }
