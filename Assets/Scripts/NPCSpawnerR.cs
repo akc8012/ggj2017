@@ -53,6 +53,8 @@ public class NPCSpawnerR : MonoBehaviour
 
         if(LevelManager.instance.LevelTimer <= 0)
         {
+
+
             spawnMoose();
             FasterSpawn();
 

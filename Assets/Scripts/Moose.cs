@@ -14,6 +14,8 @@ public class Moose : MonoBehaviour
 
 	public GameObject particle;
 
+    bool addScoreBool = false;
+
     GameObject waveTimer;
 
 
@@ -37,12 +39,16 @@ public class Moose : MonoBehaviour
         if (happiness > 9)
         {
             moveguy.Stop();
+            addScoreBool = true;
             Destroy(gameObject, 0.7f);
-            ScoreManager.instance.AddScore(20);
             store.GetComponent<StoreUIScript>().TurnStoreOn();
             invBar.GetComponent<InventoryBarScript>().TurnInventoryOn();
+        }
 
-
+        if (addScoreBool)
+        {
+            ScoreManager.instance.AddScore(20);
+            addScoreBool = false;
         }
 
         if (InputGuy.instance.IsPressedDuringFrame && InputGuy.instance.IsHoveringOver(gameObject))

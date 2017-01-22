@@ -12,7 +12,10 @@ public class NPCskeleton : MonoBehaviour
 
     GameObject waveTimer;
 
-	public GameObject particle;
+    bool addScoreBool = false;
+
+
+    public GameObject particle;
 
     public GameObject plaidman;
 
@@ -40,8 +43,14 @@ public class NPCskeleton : MonoBehaviour
         if (happiness > 3)
         {
             moveguy.Stop();
+            addScoreBool = true;
             Destroy(gameObject, 0.7f);
+        }
+
+        if (addScoreBool)
+        {
             ScoreManager.instance.AddScore(5);
+            addScoreBool = false;
         }
 
         if (InputGuy.instance.IsPressedDuringFrame && InputGuy.instance.IsHoveringOver(gameObject))
