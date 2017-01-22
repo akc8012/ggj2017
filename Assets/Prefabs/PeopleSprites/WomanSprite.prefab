@@ -58,6 +58,7 @@ GameObject:
   - 114: {fileID: 114000011342726518}
   - 65: {fileID: 65000013942793070}
   - 54: {fileID: 54000013704173182}
+  - 114: {fileID: 114000013317114606}
   m_Layer: 0
   m_Name: WomanSprite
   m_TagString: NPC
@@ -187,6 +188,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particle: {fileID: 1000011581726024}
   plaidman: {fileID: 1000010937972130, guid: c6258e3e82135ed4a9b451525ec3abd8, type: 2}
+--- !u!114 &114000013317114606
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011815932598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f90e231e77be0e04e9e6f66244ebb73f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &198000013133086486
 ParticleSystem:
   m_ObjectHideFlags: 1

@@ -17,6 +17,9 @@ public class MoveGuy : MonoBehaviour
 
     public int Direction { set { direction = value; } }
 
+	float storeDelay = 1;
+	bool storeDelayBool = false;
+
     public bool isMoose = false;
 
     GameObject invBar;
@@ -36,21 +39,30 @@ public class MoveGuy : MonoBehaviour
     {
         screenPos = cam.WorldToScreenPoint(transform.position);
 
+		if (storeDelayBool) {
+			storeDelay -= Time.deltaTime;
+			if (storeDelay <= 0) {
+				storeDelayBool = false;
+				storeDelay = 1;
+				store.GetComponent<StoreUIScript>().TurnStoreOn();
+				invBar.GetComponent<InventoryBarScript>().TurnInventoryOn();
+			}
+		}
+
         if (direction == 0)
         { 
             if (screenPos.x < -20)
             {
                 if (isMoose)
                 {
-                    Destroy(this.gameObject);
+                    Destroy(this.gameObject, 1.1f);
                     ScoreManager.instance.AddScore(-10);
-                    store.GetComponent<StoreUIScript>().TurnStoreOn();
-                    invBar.GetComponent<InventoryBarScript>().TurnInventoryOn();
+					storeDelayBool = true;
                 }
 
                 else
                 {
-                    Destroy(this.gameObject);
+                    Destroy(this.gameObject, 1.1f);
                     ScoreManager.instance.AddScore(-2);
                     GameObject.Find("Canvas").GetComponent<NPC_LeftScreenDeath>().StartExplosion("left");
                 }

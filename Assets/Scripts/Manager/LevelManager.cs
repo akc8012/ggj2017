@@ -18,14 +18,14 @@ public class LevelManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    float levelTimer = 4.0f;
+    float levelTimer = 60.0f;
         public float LevelTimer { get { return levelTimer; } set { levelTimer = value; } }
 
     int levelNumber = 0;
          public int LevelNumber {  get { return levelNumber; } set { levelNumber = value; } }
 
-    bool manSpawn = true;
-        public bool ManSpawn { get { return manSpawn; } set { manSpawn = value; } }
+    bool manSpawn = false;
+   	public bool ManSpawn { get { return manSpawn; } set { manSpawn = value; } }
 
 
 

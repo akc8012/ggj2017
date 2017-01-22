@@ -16,6 +16,7 @@ public class TitleScreenUI : MonoBehaviour
 
 	void PlayGame()
 	{
+		LevelManager.instance.ManSpawn = true;
 		SceneManager.LoadScene("TristanScene (Duplicate)", LoadSceneMode.Single);
 	}
 }

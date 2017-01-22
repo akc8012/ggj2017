@@ -18,6 +18,8 @@ public class Moose : MonoBehaviour
 
     GameObject waveTimer;
 
+	float storeDelay = 1;
+	bool storeDelayBool = false;
 
     GameObject invBar;
     GameObject store;
@@ -40,10 +42,19 @@ public class Moose : MonoBehaviour
         {
             moveguy.Stop();
             addScoreBool = true;
-            Destroy(gameObject, 0.7f);
-            store.GetComponent<StoreUIScript>().TurnStoreOn();
-            invBar.GetComponent<InventoryBarScript>().TurnInventoryOn();
+            Destroy(gameObject, 1.1f);
+			storeDelayBool = true;
         }
+
+		if (storeDelayBool) {
+			storeDelay -= Time.deltaTime;
+			if (storeDelay <= 0) {
+				storeDelayBool = false;
+				storeDelay = 1;
+				store.GetComponent<StoreUIScript>().TurnStoreOn();
+				invBar.GetComponent<InventoryBarScript>().TurnInventoryOn();
+			}
+		}
 
         if (addScoreBool)
         {

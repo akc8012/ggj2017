@@ -25,6 +25,7 @@ GameObject:
   - 114: {fileID: 114000010160174190}
   - 65: {fileID: 65000014022595820}
   - 54: {fileID: 54000011333495560}
+  - 114: {fileID: 114000011552185018}
   m_Layer: 0
   m_Name: ManSprite
   m_TagString: NPC
@@ -159,6 +160,17 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 4f4687af03b0cd24183deebc8dfd1378, type: 3}
   - {fileID: 21300000, guid: 02c10ec8f0920af4fb6730a40629921a, type: 3}
   IsMoose: 0
+--- !u!114 &114000011552185018
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010915183950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f90e231e77be0e04e9e6f66244ebb73f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000012237216960
 MonoBehaviour:
   m_ObjectHideFlags: 1
