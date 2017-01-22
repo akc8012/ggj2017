@@ -128,6 +128,7 @@ public class StoreUIScript : MonoBehaviour
     void GoToNextLevel()
     {
         TurnStoreOff();
+        LevelManager.instance.NextLevel();
     }
 
     public void TurnStoreOn()

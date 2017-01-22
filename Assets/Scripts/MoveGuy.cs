@@ -17,10 +17,18 @@ public class MoveGuy : MonoBehaviour
 
     public int Direction { set { direction = value; } }
 
+    public bool isMoose = false;
+
+    GameObject invBar;
+    GameObject store;
+
     // Use this for initialization
     void Start ()
     {
         cam = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
+
+        invBar = GameObject.Find("InventoryBar");
+        store = GameObject.Find("StoreInventoryCanvas");
     }
 
     // Update is called once per frame
@@ -32,10 +40,20 @@ public class MoveGuy : MonoBehaviour
         { 
             if (screenPos.x < -20)
             {
-                Destroy(this.gameObject);
-                ScoreManager.instance.AddScore(-2);
-				GameObject.Find ("Canvas").GetComponent<NPC_LeftScreenDeath> ().StartExplosion ("left");
-                Debug.Log("i'm dead");
+                if (isMoose)
+                {
+                    Destroy(this.gameObject);
+                    ScoreManager.instance.AddScore(-10);
+                    store.GetComponent<StoreUIScript>().TurnStoreOn();
+                    invBar.GetComponent<InventoryBarScript>().TurnInventoryOn();
+                }
+
+                else
+                {
+                    Destroy(this.gameObject);
+                    ScoreManager.instance.AddScore(-2);
+                    GameObject.Find("Canvas").GetComponent<NPC_LeftScreenDeath>().StartExplosion("left");
+                }
             }
         }
 
@@ -46,7 +64,6 @@ public class MoveGuy : MonoBehaviour
                 Destroy(this.gameObject);
                 ScoreManager.instance.AddScore(-2);
 				GameObject.Find ("Canvas").GetComponent<NPC_LeftScreenDeath> ().StartExplosion ("right");
-                Debug.Log("i'm dead");
             }
         }
 

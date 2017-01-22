@@ -96,19 +96,19 @@ public class InventoryBarScript : MonoBehaviour
                 //Put the image of the item in the inventory bar
                 switch (itemName)
                 {
-                    case "Poutine":
+                    case "PoutineItem":
                         inventorySlots[i].image.overrideSprite = itemSprites[0];
                         break;
-                    case "Balloon":
+                    case "BalloonItem":
                         inventorySlots[i].image.overrideSprite = itemSprites[1];
                         break;
-                    case "Syrup":
+                    case "SyrupItem":
                         inventorySlots[i].image.overrideSprite = itemSprites[2];
                         break;
-                    case "Bagged Milk":
+                    case "BagMilkItem":
                         inventorySlots[i].image.overrideSprite = itemSprites[3];
                         break;
-                    case "Parade":
+                    case "ParadeItem":
                         inventorySlots[i].image.overrideSprite = itemSprites[4];
                         break;
                 }

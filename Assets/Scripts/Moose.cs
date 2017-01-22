@@ -13,7 +13,10 @@ public class Moose : MonoBehaviour
 
     GameObject waveTimer;
 
-   // bool isDead = false;
+    bool isDead = false;
+
+    GameObject invBar;
+    GameObject store;
 
     // Use this for initialization
     void Start ()
@@ -21,6 +24,9 @@ public class Moose : MonoBehaviour
         moveguy = GetComponent<MoveGuy>();
 
         waveTimer = GameObject.Find("WaveTimerObject");
+
+        invBar = GameObject.Find("InventoryBar");
+        store = GameObject.Find("StoreInventoryCanvas");
     }
 	
 	// Update is called once per frame
@@ -31,7 +37,10 @@ public class Moose : MonoBehaviour
             moveguy.Stop();
             Destroy(gameObject, 0.7f);
             ScoreManager.instance.AddScore(20);
-           // isDead = true;
+            store.GetComponent<StoreUIScript>().TurnStoreOn();
+            invBar.GetComponent<InventoryBarScript>().TurnInventoryOn();
+
+
         }
 
         if (InputGuy.instance.IsPressedDuringFrame && InputGuy.instance.IsHoveringOver(gameObject))
@@ -55,7 +64,6 @@ public class Moose : MonoBehaviour
         if (Input.GetKey("mouse 0"))
         {
             happiness += PlayerDataManager.Instance.ClickPower;
-            //Debug.Log("Moose = " + happiness);
         }
     }
 }

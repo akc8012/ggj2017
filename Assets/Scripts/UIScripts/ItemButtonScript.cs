@@ -11,6 +11,8 @@ public class ItemButtonScript : MonoBehaviour
     int price;
     [SerializeField]
     string itemName;
+    [SerializeField]
+    string displayName;
 
     Button parentButton;
     InventoryBarScript invScript;
@@ -25,7 +27,7 @@ public class ItemButtonScript : MonoBehaviour
     {
         parentButton = this.GetComponent<Button>();
         invScript = GameObject.Find("InventoryBar").GetComponent<InventoryBarScript>();
-        store = GameObject.Find("Canvas").GetComponent<StoreUIScript>();
+        store = GameObject.Find("StoreInventoryCanvas").GetComponent<StoreUIScript>();
 
         displayPrice = gameObject.transform.FindChild("Price").GetComponent<Text>();
 
@@ -59,7 +61,7 @@ public class ItemButtonScript : MonoBehaviour
                 case false:
                     ScoreManager.instance.AddScore(-price);
                     invScript.SendMessage("AddItem", itemName);
-                    store.DisplayFeedback(itemName);
+                    store.DisplayFeedback(displayName);
                     break;
             }
         }

@@ -26,7 +26,7 @@ public class UpgradeButtonScript : MonoBehaviour
         isBought = false;
 
         upgradePrice = gameObject.transform.FindChild("Price").GetComponent<Text>();
-        store = GameObject.Find("Canvas").GetComponent<StoreUIScript>();
+        store = GameObject.Find("StoreInventoryCanvas").GetComponent<StoreUIScript>();
 
         parentButton.onClick.AddListener(IsPaidFor);
     }
@@ -44,6 +44,11 @@ public class UpgradeButtonScript : MonoBehaviour
         }
 
         if(isBought)
+        {
+            parentButton.interactable = false;
+        }
+
+        if(upgradeName == "Wave")
         {
             parentButton.interactable = false;
         }
