@@ -8,7 +8,7 @@ public class Loader : MonoBehaviour
 	[SerializeField] GameObject scoreManager;
 	[SerializeField] GameObject itemManager;
 	[SerializeField] GameObject inputGuy;
-	[SerializeField] bool enableInputGuy = false;	// temporary
+	[SerializeField] GameObject soundManager;
 
 	void Awake()
 	{
@@ -18,7 +18,10 @@ public class Loader : MonoBehaviour
 		if (ItemManager.instance == null)
 			Instantiate(itemManager);
 
-		if (enableInputGuy && InputGuy.instance == null)
+		if (InputGuy.instance == null)
 			Instantiate(inputGuy);
+
+		if (SoundManager.instance == null)
+			Instantiate(soundManager);
 	}
 }

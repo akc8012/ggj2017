@@ -56,3 +56,5 @@ MonoBehaviour:
   itemManager: {fileID: 1000012699039406, guid: 2fc736d1b390acf478020766d1223940,
     type: 2}
   inputGuy: {fileID: 1000010662673536, guid: dc044d5940540d44497e2577874761c2, type: 2}
+  soundManager: {fileID: 1000011227688064, guid: ab5422c847c27a74994aa484aeeac89f,
+    type: 2}
