@@ -16,7 +16,6 @@ public class SyrupItem : DragItem
 		Vector3 worldPos = Camera.main.ScreenToWorldPoint(new Vector3(mouseX, 0, zDist));
 		Vector3 spawnPos = new Vector3(worldPos.x, worldPos.y, zWithPeople);
 
-
 		Instantiate(syrupFloor, spawnPos, syrupFloor.transform.rotation);
 	}
 
