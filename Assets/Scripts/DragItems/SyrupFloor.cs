@@ -16,7 +16,7 @@ public class SyrupFloor : MonoBehaviour
 		floor.y += yOffset;
 		transform.position = floor;
 
-		StartCoroutine(TimerThenDie(3));
+		StartCoroutine(TimerThenDie(timeOnScreen));
 	}
 
 	IEnumerator TimerThenDie(float time)

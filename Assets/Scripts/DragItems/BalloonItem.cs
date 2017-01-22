@@ -7,7 +7,12 @@ public class BalloonItem : DragItem
 {
 	protected override void PerformDropAction()
 	{
-		print("find nearest person, give them a balloon");
+		GameObject hoveringOver = InputGuy.instance.GetHoveringOver();
+
+		if (hoveringOver.GetComponent<NPCskeleton>())
+			print("YAS");
+
+		//GameObject 
 	}
 
 }
