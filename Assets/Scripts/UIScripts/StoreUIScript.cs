@@ -137,6 +137,7 @@ public class StoreUIScript : MonoBehaviour
     void GoToNextLevel()
     {
         TurnStoreOff();
+		GameObject.Find("InventoryBar").GetComponent<InventoryBarScript>().TurnInventoryOn();
         LevelManager.instance.NextLevel();
     }
 

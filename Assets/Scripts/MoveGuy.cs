@@ -46,7 +46,7 @@ public class MoveGuy : MonoBehaviour
 				storeDelayBool = false;
 				storeDelay = 1;
 				store.GetComponent<StoreUIScript>().TurnStoreOn();
-				invBar.GetComponent<InventoryBarScript>().TurnInventoryOn();
+				invBar.GetComponent<InventoryBarScript>().TurnInventoryOff();
 			}
 		}
 
