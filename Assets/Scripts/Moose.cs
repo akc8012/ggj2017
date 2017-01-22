@@ -6,10 +6,13 @@ using System.Collections;
 public class Moose : MonoBehaviour
 {
     int happiness = 0;
+	public int Happiness { get { return happiness; } }
 
     MoveGuy moveguy;
 
     public GameObject plaidman;
+
+	public GameObject particle;
 
     GameObject waveTimer;
 
@@ -50,9 +53,16 @@ public class Moose : MonoBehaviour
                 Instantiate(plaidman, Vector3.zero, Quaternion.identity);
                 OnPeoplePress();
 
+				particle.SetActive (true);
+
                 PlayerDataManager.Instance.CanClick = false;
             }
         }
+
+		if (waveTimer.GetComponent<WaveTimer> ().WaveTimerGet > 55) {
+			particle.SetActive (false);
+
+		}
 
         if (PlayerDataManager.Instance.CanClick == false && waveTimer.GetComponent<WaveTimer>().isCounting == false)
             waveTimer.GetComponent<WaveTimer>().isCounting = true;

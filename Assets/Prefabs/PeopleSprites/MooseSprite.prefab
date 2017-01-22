@@ -73,7 +73,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011883371618}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -2.54, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -159,6 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plaidman: {fileID: 1000010937972130, guid: c6258e3e82135ed4a9b451525ec3abd8, type: 2}
+  particle: {fileID: 1000010218627860}
 --- !u!114 &114000013380417530
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -184,7 +185,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e4a228eb8f184d842acfdebeea26fda8, type: 3}
   - {fileID: 21300000, guid: 4f4687af03b0cd24183deebc8dfd1378, type: 3}
   - {fileID: 21300000, guid: 02c10ec8f0920af4fb6730a40629921a, type: 3}
-  IsMoose: 0
+  IsMoose: 1
 --- !u!114 &114000013735872304
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -199,6 +200,7 @@ MonoBehaviour:
   speedX: 0
   speedY: 0
   screenPos: {x: 0, y: 0, z: 0}
+  isMoose: 0
 --- !u!198 &198000010883247022
 ParticleSystem:
   m_ObjectHideFlags: 1

@@ -98,7 +98,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013500495218}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.78, y: -2.41, z: 8.579404}
+  m_LocalPosition: {x: 0, y: -2.41, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -171,6 +171,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e4a228eb8f184d842acfdebeea26fda8, type: 3}
   - {fileID: 21300000, guid: 4f4687af03b0cd24183deebc8dfd1378, type: 3}
   - {fileID: 21300000, guid: 02c10ec8f0920af4fb6730a40629921a, type: 3}
+  IsMoose: 0
 --- !u!114 &114000013182440208
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -185,6 +186,7 @@ MonoBehaviour:
   speedX: 0.1
   speedY: 0
   screenPos: {x: 0, y: 0, z: 0}
+  isMoose: 0
 --- !u!198 &198000011531566458
 ParticleSystem:
   m_ObjectHideFlags: 1

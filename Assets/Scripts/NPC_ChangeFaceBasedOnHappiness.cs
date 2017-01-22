@@ -51,7 +51,7 @@ public class NPC_ChangeFaceBasedOnHappiness : MonoBehaviour {
 				break;
 			}
 		} else {
-			switch (skeletonScript.Happiness) {
+			switch (GetComponent<Moose>().Happiness) {
 			case 0:
 				face.GetComponent<SpriteRenderer> ().sprite = spriteList [0];
 				particle.GetComponent<ParticleSystemRenderer> ().material = changingMat [0];
