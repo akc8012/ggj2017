@@ -8,7 +8,6 @@ public class NPC_LeftScreenDeath : MonoBehaviour {
 
 	float enterScreenTimer = 0;
 
-	string specificSide = "right";
 	bool startExplosion = false;
 	bool rightBool = false;
 	bool leftBool = false;
