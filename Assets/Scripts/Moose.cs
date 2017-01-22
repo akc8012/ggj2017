@@ -24,7 +24,7 @@ public class Moose : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        if (happiness > 19)
+        if (happiness > 9)
         {
             moveguy.Stop();
             Destroy(gameObject, 0.7f);
