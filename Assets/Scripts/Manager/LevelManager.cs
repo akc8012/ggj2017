@@ -36,6 +36,11 @@ public class LevelManager : MonoBehaviour
             levelTimer -= Time.deltaTime;
         }
 
+        if (Input.GetKeyDown("r"))
+        {
+            ResetLevel();
+        }
+
         //Debug.Log(levelTimer);
     }
 
