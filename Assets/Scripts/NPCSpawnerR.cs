@@ -55,6 +55,6 @@ public class NPCSpawnerR : MonoBehaviour
         tempMoose = (GameObject)Instantiate(moose, transform.position, transform.rotation);
 
         tempMoose.GetComponent<MoveGuy>().Direction = 0;
-        tempMoose.GetComponent<MoveGuy>().speedX = -0.05f;
+        tempMoose.GetComponent<MoveGuy>().speedX = -2.5f;
     }
 }
