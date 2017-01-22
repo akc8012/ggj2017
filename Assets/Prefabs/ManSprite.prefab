@@ -27,7 +27,7 @@ GameObject:
   - 54: {fileID: 54000011333495560}
   m_Layer: 0
   m_Name: ManSprite
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9426113ec6369524f8fded53e81af928, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plaidman: {fileID: 0}
+  plaidman: {fileID: 1000010937972130, guid: c6258e3e82135ed4a9b451525ec3abd8, type: 2}
 --- !u!212 &212000010904738820
 SpriteRenderer:
   m_ObjectHideFlags: 1
