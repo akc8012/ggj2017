@@ -3635,8 +3635,8 @@ GameObject:
   - 64: {fileID: 1591418723}
   - 23: {fileID: 1591418722}
   m_Layer: 0
-  m_Name: BasePlane
-  m_TagString: Untagged
+  m_Name: BasePlane - DONT DELETE
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

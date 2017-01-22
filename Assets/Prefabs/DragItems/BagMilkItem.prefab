@@ -22,6 +22,7 @@ GameObject:
   - 212: {fileID: 212000012170480726}
   - 114: {fileID: 114000011346936508}
   - 114: {fileID: 114000010682764548}
+  - 65: {fileID: 65000010398264152}
   m_Layer: 0
   m_Name: BagMilkItem
   m_TagString: Untagged
@@ -42,6 +43,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!65 &65000010398264152
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013203589274}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.8, y: 3.6, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114000010682764548
 MonoBehaviour:
   m_ObjectHideFlags: 1
