@@ -45,8 +45,6 @@ public class Moose : MonoBehaviour
         if (PlayerDataManager.Instance.CanClick == false && waveTimer.GetComponent<WaveTimer>().isCounting == false)
             waveTimer.GetComponent<WaveTimer>().isCounting = true;
 
-        if (PlayerDataManager.Instance.CanClick)
-            Debug.Log(PlayerDataManager.Instance.CanClick);
     }
 
     void OnPeoplePress()
@@ -54,7 +52,7 @@ public class Moose : MonoBehaviour
         if (Input.GetKey("mouse 0"))
         {
             happiness += PlayerDataManager.Instance.ClickPower;
-           // Debug.Log("Moose = " + happiness);
+            //Debug.Log("Moose = " + happiness);
         }
     }
 }

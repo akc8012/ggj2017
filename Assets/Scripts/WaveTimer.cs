@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿//Roger
+
+using UnityEngine;
 using System.Collections;
 
 public class WaveTimer : MonoBehaviour
@@ -24,7 +26,7 @@ public class WaveTimer : MonoBehaviour
         if (PlayerDataManager.Instance.CanClick == false)
         {
             waveTimer += 1;
-            Debug.Log(waveTimer);
+            //Debug.Log(waveTimer);
         }
 
         if (waveTimer >= PlayerDataManager.Instance.ClickDelay)

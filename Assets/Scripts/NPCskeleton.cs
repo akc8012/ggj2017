@@ -51,11 +51,11 @@ public class NPCskeleton : MonoBehaviour
             }      
         }
 
+
         if (PlayerDataManager.Instance.CanClick == false && waveTimer.GetComponent<WaveTimer>().isCounting == false)
             waveTimer.GetComponent<WaveTimer>().isCounting = true;
 
-        if (PlayerDataManager.Instance.CanClick)
-            Debug.Log(PlayerDataManager.Instance.CanClick);
+
     }
 
     void OnPeoplePress()
