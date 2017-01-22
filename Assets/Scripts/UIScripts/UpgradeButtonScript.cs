@@ -48,6 +48,11 @@ public class UpgradeButtonScript : MonoBehaviour
             parentButton.interactable = false;
         }
 
+        if(upgradeName == "Wave")
+        {
+            parentButton.interactable = false;
+        }
+
         upgradePrice.text = "$" + price.ToString();
     }
 
