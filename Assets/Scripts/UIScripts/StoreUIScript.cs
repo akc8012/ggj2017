@@ -32,6 +32,12 @@ public class StoreUIScript : MonoBehaviour
     bool onUpgrades = true;
 
 
+    //Buying Feedback
+    Text buyFeedback;
+    [SerializeField]
+    float feedbackTimer;
+
+
     // Use this for initialization
     void Start()
     {
@@ -46,6 +52,8 @@ public class StoreUIScript : MonoBehaviour
         upgradeButton = GameObject.Find("UpgradesButton").gameObject.GetComponent<Button>();
         itemButton = GameObject.Find("ItemsButton").gameObject.GetComponent<Button>();
         nextLevelButton = GameObject.Find("NextLevelButton").gameObject.GetComponent<Button>();
+
+        buyFeedback = GameObject.Find("BuyFeedback").GetComponent<Text>();
 
         //Sets all canvas groups to be invisible and non-active at the beginning
         storeGroup.alpha = 0;
@@ -130,6 +138,7 @@ public class StoreUIScript : MonoBehaviour
         upgradeGroup.alpha = 1f;
         itemGroup.alpha = 1f;
         SwitchToUpgrades();
+        ClearFeedback();
     }
     public void TurnStoreOff()
     {
@@ -142,5 +151,22 @@ public class StoreUIScript : MonoBehaviour
         upgradeGroup.alpha = 0;
         upgradeGroup.interactable = false;
         upgradeGroup.blocksRaycasts = false;
+    }
+
+
+    public void DisplayFeedback(string thing)
+    {
+        StartCoroutine(FeedbackDisplayTimer(thing));   
+    }
+    public void ClearFeedback()
+    {
+        buyFeedback.text = "";
+    }
+
+    IEnumerator FeedbackDisplayTimer(string thing)
+    {
+        buyFeedback.text = "Thank you for buying " + thing + "!";
+        yield return new WaitForSeconds(feedbackTimer);
+        ClearFeedback();
     }
 }

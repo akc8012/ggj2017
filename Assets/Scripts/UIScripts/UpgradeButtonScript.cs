@@ -12,8 +12,12 @@ public class UpgradeButtonScript : MonoBehaviour
     Button parentButton;
     [SerializeField]
     int price;
+    [SerializeField]
+    string upgradeName;
 
     Text upgradePrice;
+
+    StoreUIScript store;
 
     // Use this for initialization
     void Start()
@@ -22,6 +26,7 @@ public class UpgradeButtonScript : MonoBehaviour
         isBought = false;
 
         upgradePrice = gameObject.transform.FindChild("Price").GetComponent<Text>();
+        store = GameObject.Find("Canvas").GetComponent<StoreUIScript>();
 
         parentButton.onClick.AddListener(IsPaidFor);
     }
@@ -33,7 +38,7 @@ public class UpgradeButtonScript : MonoBehaviour
         {
             parentButton.interactable = false;
         }
-        else
+        else if (ScoreManager.instance.Score >= price && !isBought)
         {
             parentButton.interactable = true;
         }
@@ -55,6 +60,7 @@ public class UpgradeButtonScript : MonoBehaviour
             isBought = true;
             ScoreManager.instance.AddScore(-price);
             PlayerDataManager.Instance.IncreasePowerLevel();
+            store.DisplayFeedback(upgradeName);
         }
     }
 

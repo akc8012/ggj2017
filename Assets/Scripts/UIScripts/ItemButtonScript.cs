@@ -14,6 +14,7 @@ public class ItemButtonScript : MonoBehaviour
 
     Button parentButton;
     InventoryBarScript invScript;
+    StoreUIScript store;
 
     Text displayPrice;
 
@@ -24,6 +25,7 @@ public class ItemButtonScript : MonoBehaviour
     {
         parentButton = this.GetComponent<Button>();
         invScript = GameObject.Find("InventoryBar").GetComponent<InventoryBarScript>();
+        store = GameObject.Find("Canvas").GetComponent<StoreUIScript>();
 
         displayPrice = gameObject.transform.FindChild("Price").GetComponent<Text>();
 
@@ -57,6 +59,7 @@ public class ItemButtonScript : MonoBehaviour
                 case false:
                     ScoreManager.instance.AddScore(-price);
                     invScript.SendMessage("AddItem", itemName);
+                    store.DisplayFeedback(itemName);
                     break;
             }
         }
