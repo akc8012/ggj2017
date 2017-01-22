@@ -27,7 +27,7 @@ public class ItemButtonScript : MonoBehaviour
     {
         parentButton = this.GetComponent<Button>();
         invScript = GameObject.Find("InventoryBar").GetComponent<InventoryBarScript>();
-        store = GameObject.Find("Canvas").GetComponent<StoreUIScript>();
+        store = GameObject.Find("StoreInventoryCanvas").GetComponent<StoreUIScript>();
 
         displayPrice = gameObject.transform.FindChild("Price").GetComponent<Text>();
 
