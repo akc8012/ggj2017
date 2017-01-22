@@ -34,7 +34,7 @@ public class ItemManager : MonoBehaviour
 	void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.P))
-			SpawnItem("ParadeItem");
+			SpawnItem("PoutineItem");
 	}
 
 	public void SpawnItem(string name)
@@ -54,8 +54,12 @@ public class ItemManager : MonoBehaviour
 		Instantiate(obj, InputGuy.instance.WorldPosition, Quaternion.identity);
 	}
 
-	void SceneLoaded()
+	public IEnumerator DoPoutineTimer()
 	{
-
+		print("poutine on");
+		PlayerDataManager.Instance.PoutineActivate();
+		yield return new WaitForSeconds(5);
+		PlayerDataManager.Instance.PoutineDeactivate();
+		print("poutine off");
 	}
 }

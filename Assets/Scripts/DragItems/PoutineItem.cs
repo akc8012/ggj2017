@@ -7,7 +7,7 @@ public class PoutineItem : DragItem
 {
 	protected override void PerformDropAction()
 	{
-		print("give player food thing, make waving anim twice as long");
+		ItemManager.instance.StartCoroutine(ItemManager.instance.DoPoutineTimer());
 	}
 
 }
