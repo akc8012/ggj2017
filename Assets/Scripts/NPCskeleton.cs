@@ -14,7 +14,6 @@ public class NPCskeleton : MonoBehaviour
 
     bool addScoreBool = false;
 
-
     public GameObject particle;
 
     public GameObject plaidman;
@@ -40,7 +39,7 @@ public class NPCskeleton : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        if (happiness > 3)
+		if (happiness > 3 && happiness < 50)
         {
             moveguy.Stop();
             addScoreBool = true;
@@ -49,6 +48,7 @@ public class NPCskeleton : MonoBehaviour
 
         if (addScoreBool)
         {
+			happiness = 100;
             ScoreManager.instance.AddScore(5);
             addScoreBool = false;
         }

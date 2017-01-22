@@ -36,7 +36,7 @@ public class Moose : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        if (happiness > 9)
+		if (happiness > 9 && happiness < 50)
         {
             moveguy.Stop();
             addScoreBool = true;
@@ -47,6 +47,7 @@ public class Moose : MonoBehaviour
 
         if (addScoreBool)
         {
+			happiness = 100;
             ScoreManager.instance.AddScore(20);
             addScoreBool = false;
         }
