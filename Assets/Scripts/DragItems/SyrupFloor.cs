@@ -7,6 +7,7 @@ public class SyrupFloor : MonoBehaviour
 {
 	float yOffset = 0.25f;
 	float speedMod = 0.4f;
+	float timeOnScreen = 3;
 
 	void Start()
 	{
@@ -15,7 +16,7 @@ public class SyrupFloor : MonoBehaviour
 		floor.y += yOffset;
 		transform.position = floor;
 
-		//StartCoroutine(TimerThenDie(5));
+		StartCoroutine(TimerThenDie(3));
 	}
 
 	IEnumerator TimerThenDie(float time)
