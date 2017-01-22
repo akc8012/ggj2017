@@ -56,9 +56,9 @@ public class NPCskeleton : MonoBehaviour
                 PlayerDataManager.Instance.CanClick = false;
             }      
         }
+		Debug.Log (waveTimer.GetComponent<WaveTimer> ().WaveTimerGet);
 
-		if (waveTimer.GetComponent<WaveTimer> ().WaveTimerGet > 5) {
-			
+		if (waveTimer.GetComponent<WaveTimer> ().WaveTimerGet > 55) {
 			particle.SetActive (false);
 
 		}
