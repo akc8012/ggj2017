@@ -8,8 +8,7 @@ public class InventoryBarScript : MonoBehaviour
 {
     #region Start and End Positions
     Vector2 startPos;
-    [SerializeField]
-    Vector2 endPos;
+    GameObject endPoint;
     #endregion
 
     #region Extending
@@ -36,8 +35,7 @@ public class InventoryBarScript : MonoBehaviour
         //Set the start position to be the starting position
         startPos = this.transform.position;
 
-        //Set the end position
-        endPos = new Vector2(482, this.transform.position.y);
+        endPoint = GameObject.Find("InventoryBarEndPoint");
 
         //Find the button to extend and minimize the inventory
         extendButton = GameObject.Find("ExtendButton").GetComponent<Button>();
@@ -170,9 +168,9 @@ public class InventoryBarScript : MonoBehaviour
     IEnumerator Extend()
     {
         extendButton.interactable = false;
-        while (Vector2.Distance(transform.position, endPos) > 0.1f)
+        while (Vector2.Distance(transform.position, endPoint.transform.position) > 0.1f)
         {
-            transform.position = Vector2.Lerp(transform.position, endPos, speed * Time.deltaTime);
+            transform.position = Vector2.Lerp(transform.position, endPoint.transform.position, speed * Time.deltaTime);
             yield return null;
         }
         extended = !extended;
