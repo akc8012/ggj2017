@@ -21,8 +21,7 @@ public class Click_MooseIsComingScreenWarning : MonoBehaviour {
 
 		if (startBool) {
 			if (textSizeCounter < 144) {
-				GameObject temp = GameObject.Find ("Canvas/Text");	
-				temp.GetComponent<Text> ().fontSize = textSizeCounter;
+				this.GetComponent<Text> ().fontSize = textSizeCounter;
 				textSizeCounter += 4;
 			} else
 				startBool = false;
