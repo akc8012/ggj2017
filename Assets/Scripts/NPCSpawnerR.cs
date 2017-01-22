@@ -12,6 +12,7 @@ public class NPCSpawnerR : MonoBehaviour
     GameObject tempMoose;
 
     public float spawnTimeR = 5.0f;
+    public float spawnTimeRMax = 5.0f;
 
     // Use this for initialization
     void Start()
@@ -35,21 +36,27 @@ public class NPCSpawnerR : MonoBehaviour
     {
         spawnTimeR -= Time.deltaTime;
 
-        if (spawnTimeR < 0)
+        if (LevelManager.instance.ManSpawn == true)
         {
-			int rand = Random.Range (0, 3);
-			Vector3 randColor = new Vector3 (Random.Range (0, 100),Random.Range (0, 100),Random.Range (0, 100));
-			tempMan = (GameObject)Instantiate(testMan[rand], transform.position, transform.rotation);
-            tempMan.GetComponent<MoveGuy>().Direction = 0;
-			tempMan.GetComponent<SpriteRenderer> ().color = new Color (randColor.x/100,randColor.y/100, randColor.z/100, 1.0f);
+            if (spawnTimeR < 0)
+            {
+                int rand = Random.Range(0, 3);
+                Vector3 randColor = new Vector3(Random.Range(0, 100), Random.Range(0, 100), Random.Range(0, 100));
+                tempMan = (GameObject)Instantiate(testMan[rand], transform.position, transform.rotation);
+                tempMan.GetComponent<MoveGuy>().Direction = 0;
+                tempMan.GetComponent<SpriteRenderer>().color = new Color(randColor.x / 100, randColor.y / 100, randColor.z / 100, 1.0f);
 
-            tempMan.GetComponent<MoveGuy>().speedX = -5.0f;
-            spawnTimeR = 5.0f;
+                tempMan.GetComponent<MoveGuy>().speedX = -5.0f;
+                spawnTimeR = spawnTimeRMax;
+            }
         }
 
-        if(Input.GetKeyDown("m"))
+        if(LevelManager.instance.LevelTimer <= 0)
         {
             spawnMoose();
+            FasterSpawn();
+
+            LevelManager.instance.Stoptimer();
         }
     }
 
@@ -59,5 +66,10 @@ public class NPCSpawnerR : MonoBehaviour
 
         tempMoose.GetComponent<MoveGuy>().Direction = 0;
         tempMoose.GetComponent<MoveGuy>().speedX = -2.5f;
+    }
+
+    void FasterSpawn()
+    {
+        spawnTimeRMax -= 1;
     }
 }

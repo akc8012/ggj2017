@@ -508,7 +508,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57f32cde5d9b90a47970f284815fb6f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testMan: {fileID: 1000011056612450, guid: 9f7d1a5aac2be0d4583d969a1370630b, type: 2}
+  testMan:
+  - {fileID: 1000013500495218, guid: 2d912c20f0438dc43ba0a4f74af9c2b9, type: 2}
+  - {fileID: 1000010915183950, guid: d170ce64a35703d4eb7651b1b67b3ff2, type: 2}
+  - {fileID: 1000011815932598, guid: cc9e96961af23a74a8ffaab98beb9d49, type: 2}
   spawnTimeL: 5
 --- !u!33 &1224706770
 MeshFilter:
@@ -891,7 +894,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3815035339250974eba00d78570ab681, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testMan: {fileID: 1000011056612450, guid: 9f7d1a5aac2be0d4583d969a1370630b, type: 2}
+  testMan:
+  - {fileID: 1000013500495218, guid: 2d912c20f0438dc43ba0a4f74af9c2b9, type: 2}
+  - {fileID: 1000010915183950, guid: d170ce64a35703d4eb7651b1b67b3ff2, type: 2}
+  - {fileID: 1000011815932598, guid: cc9e96961af23a74a8ffaab98beb9d49, type: 2}
   moose: {fileID: 1000013313405532, guid: 6eb7e09c35be8044db81131f7be7134e, type: 2}
   spawnTimeR: 5
 --- !u!33 &1941465174

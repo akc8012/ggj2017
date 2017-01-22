@@ -18,27 +18,41 @@ public class LevelManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-
-
-    float levelTimer = 60.0f;
+    float levelTimer = 5.0f;
         public float LevelTimer { get { return levelTimer; } set { levelTimer = value; } }
 
     int levelNumber = 0;
-            public int LevelNumber {  get { return levelNumber; } set { levelNumber = value; } }
+         public int LevelNumber {  get { return levelNumber; } set { levelNumber = value; } }
 
-    public void startTimer()
+    bool manSpawn = true;
+        public bool ManSpawn { get { return manSpawn; } set { manSpawn = value; } }
+
+
+
+    void Update()
     {
-        levelTimer -= Time.deltaTime;
+        if (manSpawn == true)
+        { 
+            levelTimer -= Time.deltaTime;
+        }
+
+        Debug.Log(levelTimer);
     }
 
     public void resetTimer()
     {
+      manSpawn = true;
+    }
+
+    public void Stoptimer()
+    {
         levelTimer = 60.0f;
-        startTimer();
+        manSpawn = false;
     }
 
     public void NextLevel()
     {
-
+        levelNumber += 1;
+        resetTimer();
     }
 }
