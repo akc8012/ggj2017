@@ -13,6 +13,7 @@ public class StoreUIScript : MonoBehaviour
     CanvasGroup upgradeGroup;
     [SerializeField]
     CanvasGroup itemGroup;
+    CanvasGroup scoreGroup;
     #endregion
 
     #region Declaring Buttons
@@ -38,6 +39,10 @@ public class StoreUIScript : MonoBehaviour
     float feedbackTimer;
 
 
+    //Scoring Text
+    Text scoreText;
+
+
     // Use this for initialization
     void Start()
     {
@@ -45,7 +50,10 @@ public class StoreUIScript : MonoBehaviour
         storeGroup = GameObject.Find("StorePanel").gameObject.GetComponent<CanvasGroup>();
         upgradeGroup = GameObject.Find("UpgradePanel").gameObject.GetComponent<CanvasGroup>();
         itemGroup = GameObject.Find("ItemPanel").gameObject.GetComponent<CanvasGroup>();
+        scoreGroup = GameObject.Find("ScoreDisplay").GetComponent<CanvasGroup>();
         #endregion
+
+        scoreText = GameObject.Find("ScoreText").GetComponent<Text>();
 
         currencyText = GameObject.Find("CurrencyText").GetComponent<Text>();
 
@@ -97,8 +105,9 @@ public class StoreUIScript : MonoBehaviour
             itemGroup.transform.SetSiblingIndex(upgradeIndex);
         }
 
+        scoreText.text = "Credits: " + ScoreManager.instance.Score.ToString();
         //Update the CanadaCredit
-        currencyText.text = ScoreManager.instance.Score.ToString();
+        currencyText.text = "Credits: " + ScoreManager.instance.Score.ToString();
     }
 
     //Switches the Store Panel to Upgrades section
@@ -138,6 +147,7 @@ public class StoreUIScript : MonoBehaviour
         storeGroup.blocksRaycasts = true;
         upgradeGroup.alpha = 1f;
         itemGroup.alpha = 1f;
+        ScoreOff();
         SwitchToUpgrades();
         ClearFeedback();
     }
@@ -152,6 +162,16 @@ public class StoreUIScript : MonoBehaviour
         upgradeGroup.alpha = 0;
         upgradeGroup.interactable = false;
         upgradeGroup.blocksRaycasts = false;
+        ScoreOn();
+    }
+
+    void ScoreOn()
+    {
+        scoreGroup.alpha = 1f;
+    }
+    void ScoreOff()
+    {
+        scoreGroup.alpha = 0;
     }
 
 

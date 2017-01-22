@@ -50,10 +50,16 @@ public class UpgradeButtonScript : MonoBehaviour
 
         if(upgradeName == "Wave")
         {
+            isBought = true;
             parentButton.interactable = false;
+            upgradePrice.text = "FREE";
+        }
+        else
+        {
+            upgradePrice.text = "$" + price.ToString();
         }
 
-        upgradePrice.text = "$" + price.ToString();
+        
     }
 
     public void IsPaidFor()
