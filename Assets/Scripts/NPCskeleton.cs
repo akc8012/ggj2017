@@ -12,6 +12,8 @@ public class NPCskeleton : MonoBehaviour
 
     GameObject waveTimer;
 
+	public GameObject particle;
+
     public GameObject plaidman;
 
     //Color color;  // color of Body randomized
@@ -27,6 +29,8 @@ public class NPCskeleton : MonoBehaviour
         moveguy = GetComponent<MoveGuy>();
 
         waveTimer = GameObject.Find("WaveTimerObject");
+
+		particle.SetActive (false);
 
     }
 	
@@ -47,10 +51,17 @@ public class NPCskeleton : MonoBehaviour
                 Instantiate(plaidman, Vector3.zero, Quaternion.identity);
                 OnPeoplePress();
 
+				particle.SetActive (true);
+
                 PlayerDataManager.Instance.CanClick = false;
             }      
         }
 
+		if (waveTimer.GetComponent<WaveTimer> ().WaveTimerGet > 5) {
+			
+			particle.SetActive (false);
+
+		}
 
         if (PlayerDataManager.Instance.CanClick == false && waveTimer.GetComponent<WaveTimer>().isCounting == false)
             waveTimer.GetComponent<WaveTimer>().isCounting = true;

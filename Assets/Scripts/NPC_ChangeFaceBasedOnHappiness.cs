@@ -14,6 +14,10 @@ public class NPC_ChangeFaceBasedOnHappiness : MonoBehaviour {
 
 	public GameObject face;
 
+	public GameObject particle;
+
+	public Material[] changingMat;
+
 	public Sprite[] spriteList;
 
 	void Start () {
@@ -24,18 +28,23 @@ public class NPC_ChangeFaceBasedOnHappiness : MonoBehaviour {
 		switch(skeletonScript.Happiness){
 		case 0:
 			face.GetComponent<SpriteRenderer> ().sprite = spriteList [0];
+			particle.GetComponent<ParticleSystemRenderer> ().material = changingMat[0];
 			break;
 		case 1:
 			face.GetComponent<SpriteRenderer> ().sprite = spriteList [1];
+			particle.GetComponent<ParticleSystemRenderer> ().material = changingMat[1];
 			break;
 		case 2:
 			face.GetComponent<SpriteRenderer> ().sprite = spriteList [2];
+			particle.GetComponent<ParticleSystemRenderer> ().material = changingMat[2];
 			break;
 		case 3:
 			face.GetComponent<SpriteRenderer> ().sprite = spriteList [3];
+			particle.GetComponent<ParticleSystemRenderer> ().material = changingMat[3];
 			break;
 		case 4:
 			face.GetComponent<SpriteRenderer> ().sprite = spriteList [4];
+			particle.GetComponent<ParticleSystemRenderer> ().material = changingMat[4];
 			break;
 		}
 	}

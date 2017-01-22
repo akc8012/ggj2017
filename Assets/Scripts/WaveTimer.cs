@@ -6,6 +6,9 @@ using System.Collections;
 public class WaveTimer : MonoBehaviour
 {
     int waveTimer = 0;
+
+	public int WaveTimerGet {get{return waveTimer;}}
+
     public bool isCounting = false;
 
     // Use this for initialization
