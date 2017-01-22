@@ -70,17 +70,13 @@ public class StoreUIScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.G))
         {
-            storeGroup.alpha = 1;
-            storeGroup.interactable = true;
-            storeGroup.blocksRaycasts = true;
-
-            upgradeGroup.alpha = 1;
-            upgradeGroup.interactable = true;
-            upgradeGroup.blocksRaycasts = true;
-
-            itemGroup.alpha = 1;
+            TurnStoreOn();
+        }
+        if(Input.GetKeyDown(KeyCode.H))
+        {
+            TurnStoreOff();
         }
 
         //Checks if the store screen is on upgrades or not.  Makes sure the folders flip when needed.
@@ -122,6 +118,28 @@ public class StoreUIScript : MonoBehaviour
 
     //Goes to the next level
     void GoToNextLevel()
+    {
+        storeGroup.alpha = 0;
+        storeGroup.interactable = false;
+        storeGroup.blocksRaycasts = false;
+        itemGroup.alpha = 0;
+        itemGroup.interactable = false;
+        itemGroup.blocksRaycasts = false;
+        upgradeGroup.alpha = 0;
+        upgradeGroup.interactable = false;
+        upgradeGroup.blocksRaycasts = false;
+    }
+
+    public void TurnStoreOn()
+    {
+        storeGroup.alpha = 1f;
+        storeGroup.interactable = true;
+        storeGroup.blocksRaycasts = true;
+        upgradeGroup.alpha = 1f;
+        itemGroup.alpha = 1f;
+        SwitchToUpgrades();
+    }
+    public void TurnStoreOff()
     {
         storeGroup.alpha = 0;
         storeGroup.interactable = false;

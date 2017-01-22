@@ -29,7 +29,14 @@ public class ItemButtonScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(ScoreManager.instance.Score < price)
+        {
+            parentButton.interactable = false;
+        }
+        else
+        {
+            parentButton.interactable = true;
+        }
     }
 
     //Check to see if the player has the score to be able to pay for the item.

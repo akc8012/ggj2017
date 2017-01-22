@@ -24,6 +24,9 @@ public class InventoryBarScript : MonoBehaviour
     string[] invItems;
     public bool invFull = false;
 
+    [SerializeField]
+    CanvasGroup inventoryGroup;
+
     public Sprite[] itemSprites;
 
 
@@ -42,6 +45,9 @@ public class InventoryBarScript : MonoBehaviour
         //Listen for a click
         extendButton.onClick.AddListener(ExtendInventory);
 
+        //Get the inventory canvas group
+        inventoryGroup = this.GetComponent<CanvasGroup>();
+
         invItems = new string[8];
 
         //Make an array of buttons for the inventory and get the slots
@@ -57,7 +63,14 @@ public class InventoryBarScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(Input.GetKeyDown(KeyCode.A))
+        {
+            TurnInventoryOn();
+        }
+        if(Input.GetKeyDown(KeyCode.S))
+        {
+            TurnInventoryOff();
+        }
     }
 
     #region Adding Items
@@ -160,5 +173,21 @@ public class InventoryBarScript : MonoBehaviour
         extendButton.interactable = true;
     }
     #endregion
+
+    #region Turning Inventory On and Off
+    public void TurnInventoryOn()
+    {
+        inventoryGroup.alpha = 1f;
+        inventoryGroup.interactable = true;
+        inventoryGroup.blocksRaycasts = true;
+    }
+    public void TurnInventoryOff()
+    {
+        inventoryGroup.alpha = 0;
+        inventoryGroup.interactable = false;
+        inventoryGroup.blocksRaycasts = false;
+    }
+    #endregion
+
 
 }

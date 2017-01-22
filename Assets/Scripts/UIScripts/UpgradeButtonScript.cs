@@ -25,6 +25,15 @@ public class UpgradeButtonScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(ScoreManager.instance.Score < price)
+        {
+            parentButton.interactable = false;
+        }
+        else
+        {
+            parentButton.interactable = true;
+        }
+
         if(isBought)
         {
             parentButton.interactable = false;
