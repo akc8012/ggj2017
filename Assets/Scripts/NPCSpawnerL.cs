@@ -22,7 +22,7 @@ public class NPCSpawnerL : MonoBehaviour
         tempMan = (GameObject)Instantiate(testMan, transform.position, transform.rotation);
 
         tempMan.GetComponent<MoveGuy>().Direction = 1;
-        tempMan.GetComponent<MoveGuy>().speedX = 0.1f;
+        tempMan.GetComponent<MoveGuy>().speedX = 5.0f;
     }
 
     // Update is called once per frame
@@ -41,7 +41,7 @@ public class NPCSpawnerL : MonoBehaviour
             tempMan = (GameObject)Instantiate(testMan, transform.position, transform.rotation);
             tempMan.GetComponent<MoveGuy>().Direction = 1;
 
-            tempMan.GetComponent<MoveGuy>().speedX = 0.1f;
+            tempMan.GetComponent<MoveGuy>().speedX = 5.0f;
             spawnTimeL = 5.0f;
         }
     }
