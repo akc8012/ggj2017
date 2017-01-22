@@ -16,7 +16,6 @@ public class Moose : MonoBehaviour
 
     GameObject waveTimer;
 
-    bool isDead = false;
 
     GameObject invBar;
     GameObject store;
