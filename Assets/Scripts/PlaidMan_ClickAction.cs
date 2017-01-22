@@ -44,7 +44,7 @@ public class PlaidMan_ClickAction : MonoBehaviour {
 
 		if (startCounting)
 			counter++;
-		if (counter > 80) {
+		if (counter > 100) {
 			Destroy (gameObject);
 		}
 		if (counter == 10) {
