@@ -45,9 +45,20 @@ public class PlaidMan_ClickAction : MonoBehaviour {
 
 	void Update () {
 
-		for (int i = 0; i < PlayerDataManager.Instance.PlayerPowerLevel - 1; i++) {
-			children [i].SetActive (true);
-			children[i].GetComponent<Animator> ().SetTrigger("ACTIVE");
+		for (int i = 0; i < PlayerDataManager.Instance.PlayerPowerLevel; i++) {
+			if (!(PlayerDataManager.Instance.PlayerPowerLevel > children.Length)) {
+				children [i].SetActive (true);
+				children [i].GetComponent<Animator> ().SetTrigger ("ACTIVE");
+			} else {
+				children [0].SetActive (true);
+				children [0].GetComponent<Animator> ().SetTrigger ("ACTIVE");
+				children [1].SetActive (true);
+				children [1].GetComponent<Animator> ().SetTrigger ("ACTIVE");
+				children [2].SetActive (true);
+				children [2].GetComponent<Animator> ().SetTrigger ("ACTIVE");
+				children [3].SetActive (true);
+				children [3].GetComponent<Animator> ().SetTrigger ("ACTIVE");
+			}
 		}
 
 		if (startCounting)
