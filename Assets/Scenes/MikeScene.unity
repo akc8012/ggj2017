@@ -1122,7 +1122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   price: 50
-  itemName: BalloonItem
+  itemName: Balloon
 --- !u!114 &346801892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2922,7 +2922,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   price: 25
-  itemName: PoutineItem
+  itemName: Poutine
 --- !u!114 &980372650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3216,7 +3216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   price: 100
-  itemName: SyrupItem
+  itemName: Syrup
 --- !u!114 &1055878754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3678,7 +3678,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   price: 250
-  itemName: ParadeItem
+  itemName: Parade
 --- !u!114 &1137281096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3899,7 +3899,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   price: 150
-  itemName: BagMilkItem
+  itemName: Bagged Milk
 --- !u!114 &1199344580
 MonoBehaviour:
   m_ObjectHideFlags: 0
