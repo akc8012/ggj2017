@@ -16,6 +16,6 @@ public class GameOverUI : MonoBehaviour
 
 	void PlayGameAgain()
 	{
-		
+		SceneManager.LoadScene("TristanScene (Duplicate)", LoadSceneMode.Single);
 	}
 }
