@@ -48,7 +48,7 @@ public class MoveGuy : MonoBehaviour
             }
         }
 
-        transform.Translate(speedX, speedY, 0);
+        transform.Translate(speedX * Time.deltaTime, speedY * Time.deltaTime, 0);
     }
 
     public void Stop()
