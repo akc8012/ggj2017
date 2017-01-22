@@ -21,7 +21,6 @@ public class NPCSpawnerR : MonoBehaviour
 		Vector3 worldPos = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, zDist));
 		transform.position = new Vector3(worldPos.x, transform.position.y, transform.position.z);
 
-		tempMan = new GameObject();
         tempMan = (GameObject)Instantiate(testMan, transform.position, transform.rotation);
 
         tempMan.GetComponent<MoveGuy>().Direction = 0;
@@ -35,7 +34,6 @@ public class NPCSpawnerR : MonoBehaviour
 
         if (spawnTimeR < 0)
         {
-            tempMan = new GameObject();
             tempMan = (GameObject)Instantiate(testMan, transform.position, transform.rotation);
             tempMan.GetComponent<MoveGuy>().Direction = 0;
 
@@ -51,7 +49,6 @@ public class NPCSpawnerR : MonoBehaviour
 
     void spawnMoose()
     {
-        tempMoose = new GameObject();
         tempMoose = (GameObject)Instantiate(moose, transform.position, transform.rotation);
 
         tempMoose.GetComponent<MoveGuy>().Direction = 0;

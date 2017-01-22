@@ -18,7 +18,6 @@ public class NPCSpawnerL : MonoBehaviour
 		Vector3 worldPos = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0, zDist));
 		transform.position = new Vector3(worldPos.x, transform.position.y, transform.position.z);
 
-        tempMan = new GameObject();
         tempMan = (GameObject)Instantiate(testMan, transform.position, transform.rotation);
 
         tempMan.GetComponent<MoveGuy>().Direction = 1;
@@ -37,7 +36,6 @@ public class NPCSpawnerL : MonoBehaviour
 
         if (spawnTimeL < 0)
         {
-            tempMan = new GameObject();
             tempMan = (GameObject)Instantiate(testMan, transform.position, transform.rotation);
             tempMan.GetComponent<MoveGuy>().Direction = 1;
 
