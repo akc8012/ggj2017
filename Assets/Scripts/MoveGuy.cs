@@ -34,6 +34,7 @@ public class MoveGuy : MonoBehaviour
             {
                 Destroy(this.gameObject);
                 ScoreManager.instance.AddScore(-2);
+				GameObject.Find ("Canvas").GetComponent<NPC_LeftScreenDeath> ().StartExplosion ("left");
                 Debug.Log("i'm dead");
             }
         }
@@ -44,6 +45,7 @@ public class MoveGuy : MonoBehaviour
             {
                 Destroy(this.gameObject);
                 ScoreManager.instance.AddScore(-2);
+				GameObject.Find ("Canvas").GetComponent<NPC_LeftScreenDeath> ().StartExplosion ("right");
                 Debug.Log("i'm dead");
             }
         }
