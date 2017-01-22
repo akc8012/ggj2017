@@ -114,6 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9426113ec6369524f8fded53e81af928, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particle: {fileID: 0}
   plaidman: {fileID: 1000010937972130, guid: c6258e3e82135ed4a9b451525ec3abd8, type: 2}
 --- !u!114 &114000012770926344
 MonoBehaviour:
@@ -139,6 +140,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   face: {fileID: 1000014049198070}
+  particle: {fileID: 0}
+  changingMat: []
   spriteList:
   - {fileID: 21300000, guid: bc553d039fa23b24090943606fe6efa5, type: 3}
   - {fileID: 21300000, guid: 995617989269ddc44be103a3cfe305d0, type: 3}

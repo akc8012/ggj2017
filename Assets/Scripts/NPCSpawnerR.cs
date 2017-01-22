@@ -5,7 +5,7 @@ using System.Collections;
 
 public class NPCSpawnerR : MonoBehaviour
 {
-    public GameObject testMan;
+    public GameObject[] testMan;
     GameObject tempMan;
 
     public GameObject moose;
@@ -21,7 +21,10 @@ public class NPCSpawnerR : MonoBehaviour
 		Vector3 worldPos = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, zDist));
 		transform.position = new Vector3(worldPos.x, transform.position.y, transform.position.z);
 
-        tempMan = (GameObject)Instantiate(testMan, transform.position, transform.rotation);
+		int rand = Random.Range (0, 3);
+		Vector3 randColor = new Vector3 (Random.Range (0, 100),Random.Range (0, 100),Random.Range (0, 100));
+		tempMan = (GameObject)Instantiate(testMan[rand], transform.position, transform.rotation);
+		tempMan.GetComponent<SpriteRenderer> ().color = new Color (randColor.x/100,randColor.y/100, randColor.z/100, 1.0f);
 
         tempMan.GetComponent<MoveGuy>().Direction = 0;
         tempMan.GetComponent<MoveGuy>().speedX = -5.0f;
@@ -34,8 +37,11 @@ public class NPCSpawnerR : MonoBehaviour
 
         if (spawnTimeR < 0)
         {
-            tempMan = (GameObject)Instantiate(testMan, transform.position, transform.rotation);
+			int rand = Random.Range (0, 3);
+			Vector3 randColor = new Vector3 (Random.Range (0, 100),Random.Range (0, 100),Random.Range (0, 100));
+			tempMan = (GameObject)Instantiate(testMan[rand], transform.position, transform.rotation);
             tempMan.GetComponent<MoveGuy>().Direction = 0;
+			tempMan.GetComponent<SpriteRenderer> ().color = new Color (randColor.x/100,randColor.y/100, randColor.z/100, 1.0f);
 
             tempMan.GetComponent<MoveGuy>().speedX = -5.0f;
             spawnTimeR = 5.0f;
