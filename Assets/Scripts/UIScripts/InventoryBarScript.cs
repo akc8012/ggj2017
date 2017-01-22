@@ -16,7 +16,7 @@ public class InventoryBarScript : MonoBehaviour
     [SerializeField]
     float speed;
     Button extendButton;
-    bool extended = false;
+    public bool extended = false;
     #endregion
 
     [SerializeField]
@@ -70,6 +70,18 @@ public class InventoryBarScript : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.S))
         {
             TurnInventoryOff();
+        }
+
+        for(int i = 0; i < inventorySlots.Length; i++)
+        {
+            if(invItems[i] == "Empty")
+            {
+                inventorySlots[i].interactable = false;
+            }
+            else
+            {
+                inventorySlots[i].interactable = true;
+            }
         }
     }
 
@@ -141,11 +153,17 @@ public class InventoryBarScript : MonoBehaviour
     }
 
     #region Coroutines and Functions for extending and detracting the inventory bar
-    void ExtendInventory()
+    public void ExtendInventory()
     {
         if (!extended)
             StartCoroutine(Extend());
         else
+            StartCoroutine(Detract());
+    }
+
+    public void DetractOnClick()
+    {
+        if (extended)
             StartCoroutine(Detract());
     }
 

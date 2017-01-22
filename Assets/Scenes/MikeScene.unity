@@ -830,7 +830,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endPos: {x: 0, y: 0}
-  speed: 7
+  speed: 10
+  extended: 0
   inventorySlots: []
   invFull: 0
   inventoryGroup: {fileID: 0}
