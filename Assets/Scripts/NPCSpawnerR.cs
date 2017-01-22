@@ -71,5 +71,10 @@ public class NPCSpawnerR : MonoBehaviour
     void FasterSpawn()
     {
         spawnTimeRMax -= 1;
+
+        if (spawnTimeRMax == 0)
+        {
+            spawnTimeRMax = 1;
+        }
     }
 }

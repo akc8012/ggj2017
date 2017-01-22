@@ -60,5 +60,10 @@ public class NPCSpawnerL : MonoBehaviour
     void FasterSpawn()
     {
         spawnTimeLMax -= 1;
+
+        if (spawnTimeLMax == 0)
+        {
+            spawnTimeLMax = 1;
+        }
     }
 }
