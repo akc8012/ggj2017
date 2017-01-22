@@ -55,4 +55,11 @@ public class LevelManager : MonoBehaviour
         levelNumber += 1;
         resetTimer();
     }
+
+    public void ResetLevel()
+    {
+        levelTimer = 60.0f;
+        manSpawn = true;
+        levelNumber = 0;
+    }
 }
