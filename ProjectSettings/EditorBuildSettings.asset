@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/TitleScene(Andrew).unity
+    path: Assets/Scenes/Final Scenes/TitleScene(Andrew).unity
   - enabled: 1
-    path: Assets/Scenes/TristanScene (Duplicate).unity
+    path: Assets/Scenes/Final Scenes/MainScene(Tristan).unity
   - enabled: 1
-    path: Assets/Scenes/GameOverScene(Andrew).unity
+    path: Assets/Scenes/Final Scenes/GameOverScene(Andrew).unity
