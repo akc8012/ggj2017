@@ -33,7 +33,7 @@ public class InventoryBarScript : MonoBehaviour
     void Start()
     {
         //Set the start position to be the starting position
-        startPos = this.transform.position;
+		startPos = this.transform.localPosition;
 
         endPoint = GameObject.Find("InventoryBarEndPoint");
 
@@ -168,9 +168,9 @@ public class InventoryBarScript : MonoBehaviour
     IEnumerator Extend()
     {
         extendButton.interactable = false;
-        while (Vector2.Distance(transform.position, endPoint.transform.position) > 0.1f)
+		while (Vector2.Distance(transform.localPosition, endPoint.transform.localPosition) > 0.1f)
         {
-            transform.position = Vector2.Lerp(transform.position, endPoint.transform.position, speed * Time.deltaTime);
+			transform.localPosition = Vector2.Lerp(transform.localPosition, endPoint.transform.localPosition, speed * Time.deltaTime);
             yield return null;
         }
         extended = !extended;
@@ -180,9 +180,9 @@ public class InventoryBarScript : MonoBehaviour
     IEnumerator Detract()
     {
         extendButton.interactable = false;
-        while (Vector2.Distance(transform.position, startPos) > 0.1f)
+		while (Vector2.Distance(transform.localPosition, startPos) > 0.1f)
         {
-            transform.position = Vector2.Lerp(transform.position, startPos, speed * Time.deltaTime);
+			transform.localPosition = Vector2.Lerp(transform.localPosition, startPos, speed * Time.deltaTime);
             yield return null;
         }
         extended = !extended;
