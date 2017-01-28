@@ -10,6 +10,7 @@ public class Loader : MonoBehaviour
 	[SerializeField] GameObject inputGuy;
 	[SerializeField] GameObject soundManager;
 	[SerializeField] GameObject levelManager;
+	[SerializeField] bool startTimerOnLoad = false;
 
     void Awake()
 	{
@@ -27,5 +28,8 @@ public class Loader : MonoBehaviour
 
         if (LevelManager.instance == null)
             Instantiate(levelManager);
-    }
+
+		if (startTimerOnLoad)
+			LevelManager.instance.ManSpawn = true;
+	}
 }
