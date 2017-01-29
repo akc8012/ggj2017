@@ -18,7 +18,7 @@ public class LevelManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    float levelTimer = 5.0f;
+    float levelTimer = 60.0f;
         public float LevelTimer { get { return levelTimer; } set { levelTimer = value; } }
 
     int levelNumber = 0;
