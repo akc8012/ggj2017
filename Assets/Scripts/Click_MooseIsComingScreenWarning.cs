@@ -36,6 +36,7 @@ public class Click_MooseIsComingScreenWarning : MonoBehaviour {
         {
             mooseCounter = 2;
             textSizeCounter = 1;
+			this.GetComponent<Text> ().enabled = true;
             this.GetComponent<Text>().fontSize = textSizeCounter;
 
             if (checkyCheck)
