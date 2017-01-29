@@ -42,10 +42,15 @@ public class StoreUIScript : MonoBehaviour
     //Scoring Text
     Text scoreText;
 
+	// power gauge, moose text, damage border
+	GameObject mainCanvas;
 
     // Use this for initialization
     void Start()
     {
+		if(GameObject.Find("Canvas"))
+			mainCanvas = GameObject.Find ("Canvas");
+
         #region Setting Canvas Groups
         storeGroup = GameObject.Find("StorePanel").gameObject.GetComponent<CanvasGroup>();
         upgradeGroup = GameObject.Find("UpgradePanel").gameObject.GetComponent<CanvasGroup>();
@@ -137,12 +142,12 @@ public class StoreUIScript : MonoBehaviour
     void GoToNextLevel()
     {
         TurnStoreOff();
-		GameObject.Find("InventoryBar").GetComponent<InventoryBarScript>().TurnInventoryOn();
         LevelManager.instance.NextLevel();
     }
 
     public void TurnStoreOn()
     {
+		mainCanvas.SetActive (false);GameObject.Find("InventoryBar").GetComponent<InventoryBarScript>().TurnInventoryOff();
         storeGroup.alpha = 1f;
         storeGroup.interactable = true;
         storeGroup.blocksRaycasts = true;
@@ -154,6 +159,7 @@ public class StoreUIScript : MonoBehaviour
     }
     public void TurnStoreOff()
     {
+		mainCanvas.SetActive (true);GameObject.Find("InventoryBar").GetComponent<InventoryBarScript>().TurnInventoryOn();
         storeGroup.alpha = 0;
         storeGroup.interactable = false;
         storeGroup.blocksRaycasts = false;
